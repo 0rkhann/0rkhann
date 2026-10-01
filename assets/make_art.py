@@ -2,6 +2,8 @@
 
 Run: uv run --with rdkit python assets/make_art.py
 """
+import math
+import os
 import random
 import re
 import urllib.request
@@ -178,6 +180,62 @@ def divider():
 '''
 
 
+def glyphs():
+    """Teal line icons for the project table, one per project."""
+    def tile(body):
+        return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">'
+                f'<rect width="32" height="32" rx="8" fill="{BG}"/>'
+                f'<g fill="none" stroke="{TEAL}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{body}</g></svg>')
+
+    def pt(cx, cy, r, deg):
+        a = math.radians(deg)
+        return cx + r * math.cos(a), cy + r * math.sin(a)
+
+    # chemlit: a paper under a magnifier
+    chemlit = ('<path d="M8,6 H18 L23,11 V26 H8 Z"/><path d="M18,6 V11 H23"/><path d="M11,15 H19 M11,19 H15"/>'
+               f'<circle cx="21" cy="22" r="4" fill="{BG}"/><path d="M24,25 L27.5,28.5"/>')
+
+    # MicroKatc: a catalytic cycle, three intermediates joined by arrows
+    nodes = [pt(16, 16, 9, a) for a in (-90, 30, 150)]
+    arcs = "".join(f'<path d="M{pt(16, 16, 9, a + 18)[0]:.1f},{pt(16, 16, 9, a + 18)[1]:.1f} A9,9 0 0 1 {pt(16, 16, 9, a + 102)[0]:.1f},{pt(16, 16, 9, a + 102)[1]:.1f}"/>'
+                   for a in (-90, 30, 150))
+    heads = ""
+    for a in (-90, 30, 150):
+        x, y = pt(16, 16, 9, a + 102)
+        t = math.radians(a + 102 + 90)  # tangent direction
+        for side in (-1, 1):
+            hx = x - 3.2 * math.cos(t) + side * 2.2 * math.cos(t + math.pi / 2)
+            hy = y - 3.2 * math.sin(t) + side * 2.2 * math.sin(t + math.pi / 2)
+            heads += f'<path d="M{x:.1f},{y:.1f} L{hx:.1f},{hy:.1f}"/>'
+    dots = "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.2" fill="{TEAL}" stroke="none"/>' for x, y in nodes)
+    microkatc = arcs + heads + dots
+
+    # BO project: an N-heterocyclic carbene (imidazol-2-ylidene) with its lone pair
+    ring = [pt(16, 18.5, 7.5, a) for a in (-90, -18, 54, 126, 198)]
+    poly = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in ring) + " Z"
+    (x3, y3), (x4, y4) = ring[2], ring[3]
+    inner = f'<path d="M{x3 - 1.2:.1f},{y3 - 2:.1f} L{x4 + 1.2:.1f},{y4 - 2:.1f}" stroke-width="1.3"/>'
+    ns = "".join(f'<circle cx="{ring[i][0]:.1f}" cy="{ring[i][1]:.1f}" r="2.4" fill="#7aa2ff" stroke="none"/>' for i in (1, 4))
+    subs = f'<path d="M{ring[1][0]:.1f},{ring[1][1]:.1f} l4,-2.5 M{ring[4][0]:.1f},{ring[4][1]:.1f} l-4,-2.5"/>'
+    pair = f'<circle cx="14.4" cy="7" r="1.2" fill="{TEAL}" stroke="none"/><circle cx="17.6" cy="7" r="1.2" fill="{TEAL}" stroke="none"/>'
+    bo = f'<path d="{poly}"/>' + inner + subs + ns + pair
+
+    # neptune: a peptide backbone with side chains
+    zig = [(5, 19), (10, 14), (15, 19), (20, 14), (25, 19), (28, 15)]
+    backbone = "M" + " L".join(f"{x},{y}" for x, y in zig)
+    side = "".join(f'<path d="M{x},{y} V{y - 5 if y < 17 else y + 5}"/><circle cx="{x}" cy="{y - 7 if y < 17 else y + 7}" r="1.8" fill="{TEAL}" stroke="none"/>'
+                   for x, y in zig[1:5])
+    neptune = f'<path d="{backbone}"/>' + side
+
+    # CoLiNN: a GTM chemical space map with density contours
+    colinn = ('<rect x="5" y="5" width="22" height="22" rx="3"/>'
+              '<path d="M10,20 C9,14 15,10 20,12 C25,14 24,22 18,23 C14,24 11,23 10,20 Z" stroke-opacity=".55"/>'
+              '<path d="M14,19 C13.5,16 17,14.5 19,16 C21,17.5 19.5,20.5 17,20.5 C15.5,20.5 14.3,20 14,19 Z"/>'
+              + "".join(f'<circle cx="{x}" cy="{y}" r="1.1" fill="{TEAL}" stroke="none"/>' for x, y in ((9, 9), (23, 9), (8, 24), (24, 25), (17, 18))))
+
+    return {"chemlit": tile(chemlit), "microkatc": tile(microkatc), "bo": tile(bo), "neptune": tile(neptune), "colinn": tile(colinn)}
+
+
 SKILLICONS = "https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7"
 BADGES = [
     "Claude-161b22?style=flat-square&logo=claude&logoColor=D97757",
@@ -231,7 +289,10 @@ def toolbox():
 
 
 if __name__ == "__main__":
-    for name, svg in [("hero.svg", hero()), ("divider.svg", divider()), ("toolbox.svg", toolbox())]:
+    files = [("hero.svg", hero()), ("divider.svg", divider()), ("toolbox.svg", toolbox())]
+    files += [(f"glyphs/{k}.svg", v) for k, v in glyphs().items()]
+    os.makedirs("assets/glyphs", exist_ok=True)
+    for name, svg in files:
         with open(f"assets/{name}", "w") as f:
             f.write(svg)
         print("wrote", name)

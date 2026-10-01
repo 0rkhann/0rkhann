@@ -24,11 +24,11 @@ orkhan = {
 
 | | Project | What it does |
 |:-:|---|---|
-| 📚 | [**chemlit**](https://github.com/0rkhann/chemlit) | Citation-grounded literature agent for chemoinformatics: hybrid search, cross-encoder reranking, PaperQA2 answers with claim-level citations, RDKit / ChEMBL compound checks. |
-| ⚗️ | [**MicroKatc**](https://github.com/0rkhann/MicroKatc) | Quantitative assessment of catalytic cycles with microkinetic modelling. |
-| 🎯 | **BO project** 🔒 | Bayesian optimisation for N-heterocyclic carbene (NHC) design, searching for optimal binding free energies with DFT in the loop. |
-| 🧬 | [**neptune**](https://github.com/0rkhann/neptune) | Branch of SATURN for peptidomimetics design. |
-| 🗺️ | **CoLiNN** 🔒 | Neural network that places combinatorial-library compounds on a GTM chemical space map from building blocks and reactions alone, with no enumeration. |
+| <img src="./assets/glyphs/chemlit.svg" width="32" alt=""/> | [**chemlit**](https://github.com/0rkhann/chemlit) | Citation-grounded literature agent for chemoinformatics: hybrid search, cross-encoder reranking, PaperQA2 answers with claim-level citations, RDKit / ChEMBL compound checks. |
+| <img src="./assets/glyphs/microkatc.svg" width="32" alt=""/> | [**MicroKatc**](https://github.com/0rkhann/MicroKatc) | Quantitative assessment of catalytic cycles with microkinetic modelling. |
+| <img src="./assets/glyphs/bo.svg" width="32" alt=""/> | **BO project** 🔒 | Bayesian optimisation for N-heterocyclic carbene (NHC) design, searching for optimal binding free energies with DFT in the loop. |
+| <img src="./assets/glyphs/neptune.svg" width="32" alt=""/> | [**neptune**](https://github.com/0rkhann/neptune) | Branch of SATURN for peptidomimetics design. |
+| <img src="./assets/glyphs/colinn.svg" width="32" alt=""/> | **CoLiNN** 🔒 | Neural network that places combinatorial-library compounds on a GTM chemical space map from building blocks and reactions alone, with no enumeration. |
 
 <img src="./assets/divider.svg" width="100%"/>
 
@@ -40,10 +40,10 @@ orkhan = {
 
 <img src="./assets/divider.svg" width="100%"/>
 
-### `$ plate-reader --last-year`
+### `$ plate-reader --all-years`
 
 <p align="center">
-  <img src="./assets/plate.svg" width="100%" alt="GitHub contributions drawn as an assay plate, one well per day"/>
+  <img src="./assets/plate.svg" width="100%" alt="GitHub contributions since 2022 as a stack of assay plates, one plate per year, one well per day"/>
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>
