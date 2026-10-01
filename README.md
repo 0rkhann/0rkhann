@@ -22,13 +22,13 @@ orkhan = {
 
 ### `$ ls projects/`
 
-| | Project | What it does |
-|:-:|---|---|
-| <img src="./assets/glyphs/chemlit.svg" width="32" alt=""/> | [**chemlit**](https://github.com/0rkhann/chemlit) | Citation-grounded literature agent for chemoinformatics: hybrid search, cross-encoder reranking, PaperQA2 answers with claim-level citations, RDKit / ChEMBL compound checks. |
-| <img src="./assets/glyphs/microkatc.svg" width="32" alt=""/> | [**MicroKatc**](https://github.com/0rkhann/MicroKatc) | Quantitative assessment of catalytic cycles with microkinetic modelling. |
-| <img src="./assets/glyphs/bo.svg" width="32" alt=""/> | **BO project** 🔒 | Bayesian optimisation for N-heterocyclic carbene (NHC) design, searching for optimal binding free energies with DFT in the loop. |
-| <img src="./assets/glyphs/neptune.svg" width="32" alt=""/> | [**neptune**](https://github.com/0rkhann/neptune) | Branch of SATURN for peptidomimetics design. |
-| <img src="./assets/glyphs/colinn.svg" width="32" alt=""/> | **CoLiNN** 🔒 | Neural network that places combinatorial-library compounds on a GTM chemical space map from building blocks and reactions alone, with no enumeration. |
+| Project | What it does |
+|---|---|
+| <img src="./assets/glyphs/chemlit.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;[**chemlit**](https://github.com/0rkhann/chemlit) | Citation-grounded literature agent for chemoinformatics: hybrid search, cross-encoder reranking, PaperQA2 answers with claim-level citations, RDKit / ChEMBL compound checks. |
+| <img src="./assets/glyphs/microkatc.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;[**MicroKatc**](https://github.com/0rkhann/MicroKatc) | Quantitative assessment of catalytic cycles with microkinetic modelling. |
+| <img src="./assets/glyphs/bo.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;**BO&nbsp;project**&nbsp;🔒 | Bayesian optimisation for N-heterocyclic carbene (NHC) design, searching for optimal binding free energies with DFT in the loop. |
+| <img src="./assets/glyphs/neptune.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;[**neptune**](https://github.com/0rkhann/neptune) | Branch of SATURN for peptidomimetics design. |
+| <img src="./assets/glyphs/colinn.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;**CoLiNN**&nbsp;🔒 | Neural network that places combinatorial-library compounds on a GTM chemical space map from building blocks and reactions alone, with no enumeration. |
 
 <img src="./assets/divider.svg" width="100%"/>
 
