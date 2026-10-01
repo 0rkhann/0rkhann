@@ -219,6 +219,7 @@ def toolbox():
         x, y = c * (tw + gap), r * (th + gap)
         out.append(
             f'<g class="el" style="animation-delay:{(z - 1) * .05:.2f}s">'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{BG}"/>'  # opaque base: legible on light pages too
             f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
             f'<text x="{x + 12}" y="{y + 22}" class="z">{z}</text>'
             f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
