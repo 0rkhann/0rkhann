@@ -2,6 +2,9 @@
 
 Run: uv run --with rdkit python assets/make_art.py
 """
+import glob
+import hashlib
+import os
 import random
 import re
 from xml.sax.saxutils import escape
@@ -289,9 +292,17 @@ def toolbox():
 
 
 if __name__ == "__main__":
+    # file names carry a content hash, so a changed image gets a new URL and no browser or CDN serves a stale copy
+    readme = open("README.md").read()
+    for old in glob.glob("assets/*-dark.*.svg") + glob.glob("assets/*-light.*.svg"):
+        os.remove(old)
     for theme, palette in THEMES.items():
         globals().update(palette)
         for name, svg in [("hero", hero()), ("divider", divider()), ("toolbox", toolbox())]:
-            with open(f"assets/{name}-{theme}.svg", "w") as f:
+            fname = f"{name}-{theme}.{hashlib.sha1(svg.encode()).hexdigest()[:8]}.svg"
+            with open(f"assets/{fname}", "w") as f:
                 f.write(svg)
-            print(f"wrote {name}-{theme}.svg")
+            readme = re.sub(rf"assets/{name}-{theme}(\.[0-9a-f]{{8}})?\.svg", f"assets/{fname}", readme)
+            print(f"wrote {fname}")
+    with open("README.md", "w") as f:
+        f.write(readme)
