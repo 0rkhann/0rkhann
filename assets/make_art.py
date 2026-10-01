@@ -178,56 +178,62 @@ def divider():
 '''
 
 
-# periodic-table toolbox: (symbol, name), grouped into families that set the tile colour
-FAMILIES = [
-    ("Machine & deep learning", "#7aa2ff", [("Py", "Python"), ("Pt", "PyTorch"), ("Sk", "scikit-learn"), ("Hf", "Hugging Face"), ("Bo", "Bayesian optimisation")]),
-    ("Chemistry", TEAL, [("Rd", "RDKit")]),
-    ("AI & agents", "#ff9e64", [("Lm", "LLMs"), ("Ag", "AI agents"), ("Cl", "Claude")]),
-    ("Infrastructure", "#e3b341", [("Lx", "Linux"), ("Dk", "Docker"), ("Gt", "Git"), ("Aw", "AWS")]),
+# periodic-table toolbox: families set the tile colour
+FAMILIES = {
+    "ml": ("Machine & deep learning", "#7aa2ff"),
+    "chem": ("Chemistry", TEAL),
+    "ai": ("AI & agents", "#ff9e64"),
+    "infra": ("Infrastructure", "#e3b341"),
+}
+# (row, column, symbol, name, family) on a 7-column grid shaped like the periodic table:
+# two corner tiles on top, two-and-two in the middle, a full bottom row
+ELEMENTS = [
+    (0, 0, "Py", "Python", "ml"), (0, 6, "Rd", "RDKit", "chem"),
+    (1, 0, "Pt", "PyTorch", "ml"), (1, 1, "Sk", "scikit-learn", "ml"),
+    (1, 5, "Lx", "Linux", "infra"), (1, 6, "Dk", "Docker", "infra"),
+    (2, 0, "Hf", "Hugging Face", "ml"), (2, 1, "Bo", "Bayesian optimisation", "ml"),
+    (2, 2, "Lm", "LLMs", "ai"), (2, 3, "Ag", "AI agents", "ai"), (2, 4, "Cl", "Claude", "ai"),
+    (2, 5, "Gt", "Git", "infra"), (2, 6, "Aw", "AWS", "infra"),
 ]
-ROWS = [[0, 1], [2, 3]]  # families per row of the table
 
 
 def toolbox():
-    """Tools as periodic-table element tiles, one colour per family."""
-    tw, th, gap, fam_gap = 120, 132, 10, 26
-    widths = [sum(len(FAMILIES[f][2]) * (tw + gap) - gap for f in row) + fam_gap * (len(row) - 1) for row in ROWS]
-    width = max(widths)
-    out, z, k = [], 0, 0
+    """Tools as element tiles laid out in the periodic table's silhouette."""
+    tw, th, gap = 120, 132, 10
+    ncol = 1 + max(c for _, c, *_ in ELEMENTS)
+    nrow = 1 + max(r for r, *_ in ELEMENTS)
+    width = ncol * (tw + gap) - gap
 
     def name_lines(cx, y, name):
         # names wider than a tile wrap onto two lines
         if len(name) <= 13 or " " not in name:
             return f'<text x="{cx:.0f}" y="{y + 108}" class="nm">{escape(name)}</text>'
-        a, b = name.split(" ", 1)
-        return (f'<text x="{cx:.0f}" y="{y + 100}" class="nm">{escape(a)}</text>'
-                f'<text x="{cx:.0f}" y="{y + 119}" class="nm">{escape(b)}</text>')
-    for r, row in enumerate(ROWS):
-        x = (width - widths[r]) / 2
-        y = r * (th + gap)
-        for f in row:
-            _, color, tools = FAMILIES[f]
-            for sym, name in tools:
-                z += 1
-                out.append(
-                    f'<g class="el" style="animation-delay:{k * .06:.2f}s">'
-                    f'<rect x="{x:.0f}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
-                    f'<text x="{x + 12:.0f}" y="{y + 22}" class="z">{z}</text>'
-                    f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
-                    + name_lines(x + tw / 2, y, name) + "</g>"
-                )
-                x += tw + gap
-                k += 1
-            x += fam_gap - gap
-    ly = len(ROWS) * (th + gap) + 18
+        first, rest = name.split(" ", 1)
+        return (f'<text x="{cx:.0f}" y="{y + 100}" class="nm">{escape(first)}</text>'
+                f'<text x="{cx:.0f}" y="{y + 119}" class="nm">{escape(rest)}</text>')
+
+    out = []
+    # atomic numbers run row by row, like the real table
+    for z, (r, c, sym, name, fam) in enumerate(sorted(ELEMENTS), start=1):
+        color = FAMILIES[fam][1]
+        x, y = c * (tw + gap), r * (th + gap)
+        out.append(
+            f'<g class="el" style="animation-delay:{(z - 1) * .05:.2f}s">'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
+            f'<text x="{x + 12}" y="{y + 22}" class="z">{z}</text>'
+            f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
+            + name_lines(x + tw / 2, y, name) + "</g>"
+        )
+    ly = nrow * (th + gap) + 18
     legend, lx = [], 0.0
-    for fam, color, _ in FAMILIES:
+    for fam, color in FAMILIES.values():
         legend.append(f'<rect x="{lx:.0f}" y="{ly - 11}" width="12" height="12" rx="3" fill="{color}" fill-opacity=".35" stroke="{color}"/>'
                       f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
         lx += 20 + 9.8 * len(fam) + 30
-    shift = (width - (lx - 28)) / 2
+    shift = (width - (lx - 30)) / 2
     h = ly + 12
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width:.0f} {h}" width="{width:.0f}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {escape(", ".join(n for _, _, t in FAMILIES for _, n in t))}">
+    names = escape(", ".join(e[3] for e in sorted(ELEMENTS)))
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {names}">
   <style>
     .z {{ font:500 14px {MONO}; fill:{MUTED}; }}
     .sym {{ font:700 46px {SANS}; text-anchor:middle; }}
