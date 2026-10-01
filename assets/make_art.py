@@ -9,8 +9,18 @@ from xml.sax.saxutils import escape
 from rdkit import Chem
 from rdkit.Chem import rdDepictor
 
-BG, PANEL, TEAL, DIM, TEXT, MUTED, EDGE = "#0d1117", "#111a24", "#4FD1C5", "#1f6f6a", "#e6edf3", "#8b949e", "#21262d"
-ATOM_COLOR = {"N": "#7aa2ff", "O": "#ff7b72", "S": "#e3b341"}
+# one palette per GitHub theme; build() swaps them into these module names before drawing
+THEMES = {
+    "dark": dict(BG="#0d1117", PANEL="#111a24", TEAL="#4FD1C5", DIM="#1f6f6a", TEXT="#e6edf3", MUTED="#8b949e",
+                 EDGE="#21262d", TILE="#0d1117", NAME="#c9d1d9",
+                 ATOM_COLOR={"N": "#7aa2ff", "O": "#ff7b72", "S": "#e3b341"},
+                 FAM={"ml": "#7aa2ff", "chem": "#4FD1C5", "ai": "#ff9e64", "infra": "#e3b341"}),
+    "light": dict(BG="#f6f8fa", PANEL="#ffffff", TEAL="#0b7285", DIM="#9fd3cd", TEXT="#1f2328", MUTED="#59636e",
+                  EDGE="#d0d7de", TILE="#ffffff", NAME="#1f2328",
+                  ATOM_COLOR={"N": "#3b5bdb", "O": "#d6336c", "S": "#9c6f00"},
+                  FAM={"ml": "#3b5bdb", "chem": "#0b7285", "ai": "#d9480f", "infra": "#9c6f00"}),
+}
+globals().update(THEMES["dark"])
 SMILES = "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"  # caffeine
 W, H = 1200, 320
 SANS = '-apple-system,"Segoe UI",Helvetica,Arial,sans-serif'
@@ -167,7 +177,7 @@ def divider():
     path = "M" + " L".join(pts)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} 40" width="{W}" height="40" role="img" aria-label="divider">
   <style>
-    .base {{ fill:none; stroke:#8b949e; stroke-opacity:.3; stroke-width:1.5; }}
+    .base {{ fill:none; stroke:{MUTED}; stroke-opacity:.3; stroke-width:1.5; }}
     .pulse {{ fill:none; stroke:{TEAL}; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:90 2400; animation:run 6s linear infinite; }}
     @keyframes run {{ from {{ stroke-dashoffset:90; }} to {{ stroke-dashoffset:-2400; }} }}
     @media (prefers-reduced-motion: reduce) {{ .pulse {{ animation:none; }} }}
@@ -178,60 +188,63 @@ def divider():
 '''
 
 
-# periodic-table toolbox: (symbol, name), grouped into families that set the tile colour
-FAMILIES = [
-    ("Machine & deep learning", "#7aa2ff", [("Py", "Python"), ("Pt", "PyTorch"), ("Sk", "scikit-learn"), ("Hf", "Hugging Face"), ("Bo", "Bayesian optimisation")]),
-    ("Chemistry", TEAL, [("Rd", "RDKit")]),
-    ("AI & agents", "#ff9e64", [("Lm", "LLMs"), ("Ag", "AI agents"), ("Cl", "Claude")]),
-    ("Infrastructure", "#e3b341", [("Lx", "Linux"), ("Dk", "Docker"), ("Gt", "Git"), ("Aw", "AWS")]),
+# periodic-table toolbox: families set the tile colour
+FAMILIES = {"ml": "Machine & deep learning", "chem": "Chemistry", "ai": "AI & agents", "infra": "Infrastructure"}
+# (row, column, symbol, name, family) on a 7-column grid shaped like the periodic table:
+# two corner tiles on top, two-and-two in the middle, a full bottom row
+ELEMENTS = [
+    (0, 0, "Py", "Python", "ml"), (0, 6, "Rd", "RDKit", "chem"),
+    (1, 0, "Pt", "PyTorch", "ml"), (1, 1, "Sk", "scikit-learn", "ml"),
+    (1, 5, "Lx", "Linux", "infra"), (1, 6, "Dk", "Docker", "infra"),
+    (2, 0, "Hf", "Hugging Face", "ml"), (2, 1, "Bo", "Bayesian optimisation", "ml"),
+    (2, 2, "Lm", "LLMs", "ai"), (2, 3, "Ag", "AI agents", "ai"), (2, 4, "Cl", "Claude", "ai"),
+    (2, 5, "Gt", "Git", "infra"), (2, 6, "Aw", "AWS", "infra"),
 ]
-ROWS = [[0, 1], [2, 3]]  # families per row of the table
 
 
 def toolbox():
-    """Tools as periodic-table element tiles, one colour per family."""
-    tw, th, gap, fam_gap = 120, 132, 10, 26
-    widths = [sum(len(FAMILIES[f][2]) * (tw + gap) - gap for f in row) + fam_gap * (len(row) - 1) for row in ROWS]
-    width = max(widths)
-    out, z, k = [], 0, 0
+    """Tools as element tiles laid out in the periodic table's silhouette."""
+    tw, th, gap = 120, 132, 10
+    ncol = 1 + max(c for _, c, *_ in ELEMENTS)
+    nrow = 1 + max(r for r, *_ in ELEMENTS)
+    width = ncol * (tw + gap) - gap
 
     def name_lines(cx, y, name):
         # names wider than a tile wrap onto two lines
         if len(name) <= 13 or " " not in name:
             return f'<text x="{cx:.0f}" y="{y + 108}" class="nm">{escape(name)}</text>'
-        a, b = name.split(" ", 1)
-        return (f'<text x="{cx:.0f}" y="{y + 100}" class="nm">{escape(a)}</text>'
-                f'<text x="{cx:.0f}" y="{y + 119}" class="nm">{escape(b)}</text>')
-    for r, row in enumerate(ROWS):
-        x = (width - widths[r]) / 2
-        y = r * (th + gap)
-        for f in row:
-            _, color, tools = FAMILIES[f]
-            for sym, name in tools:
-                z += 1
-                out.append(
-                    f'<g class="el" style="animation-delay:{k * .06:.2f}s">'
-                    f'<rect x="{x:.0f}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
-                    f'<text x="{x + 12:.0f}" y="{y + 22}" class="z">{z}</text>'
-                    f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
-                    + name_lines(x + tw / 2, y, name) + "</g>"
-                )
-                x += tw + gap
-                k += 1
-            x += fam_gap - gap
-    ly = len(ROWS) * (th + gap) + 18
+        first, rest = name.split(" ", 1)
+        return (f'<text x="{cx:.0f}" y="{y + 100}" class="nm">{escape(first)}</text>'
+                f'<text x="{cx:.0f}" y="{y + 119}" class="nm">{escape(rest)}</text>')
+
+    out = []
+    # atomic numbers run row by row, like the real table
+    for z, (r, c, sym, name, fam) in enumerate(sorted(ELEMENTS), start=1):
+        color = FAM[fam]
+        x, y = c * (tw + gap), r * (th + gap)
+        out.append(
+            f'<g class="el" style="animation-delay:{(z - 1) * .05:.2f}s">'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{TILE}"/>'  # opaque base under the tint
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
+            f'<text x="{x + 12}" y="{y + 22}" class="z">{z}</text>'
+            f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
+            + name_lines(x + tw / 2, y, name) + "</g>"
+        )
+    ly = nrow * (th + gap) + 18
     legend, lx = [], 0.0
-    for fam, color, _ in FAMILIES:
+    for key, fam in FAMILIES.items():
+        color = FAM[key]
         legend.append(f'<rect x="{lx:.0f}" y="{ly - 11}" width="12" height="12" rx="3" fill="{color}" fill-opacity=".35" stroke="{color}"/>'
                       f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
         lx += 20 + 9.8 * len(fam) + 30
-    shift = (width - (lx - 28)) / 2
+    shift = (width - (lx - 30)) / 2
     h = ly + 12
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width:.0f} {h}" width="{width:.0f}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {escape(", ".join(n for _, _, t in FAMILIES for _, n in t))}">
+    names = escape(", ".join(e[3] for e in sorted(ELEMENTS)))
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {names}">
   <style>
     .z {{ font:500 14px {MONO}; fill:{MUTED}; }}
     .sym {{ font:700 46px {SANS}; text-anchor:middle; }}
-    .nm {{ font:500 16px {SANS}; fill:#c9d1d9; text-anchor:middle; }}
+    .nm {{ font:500 16px {SANS}; fill:{NAME}; text-anchor:middle; }}
     .lg {{ font:400 16px {MONO}; fill:{MUTED}; }}
     .el {{ opacity:0; animation:in .5s ease-out forwards; }}
     @keyframes in {{ from {{ opacity:0; transform:translateY(6px); }} to {{ opacity:1; transform:none; }} }}
@@ -244,8 +257,9 @@ def toolbox():
 
 
 if __name__ == "__main__":
-    files = [("hero.svg", hero()), ("divider.svg", divider()), ("toolbox.svg", toolbox())]
-    for name, svg in files:
-        with open(f"assets/{name}", "w") as f:
-            f.write(svg)
-        print("wrote", name)
+    for theme, palette in THEMES.items():
+        globals().update(palette)
+        for name, svg in [("hero", hero()), ("divider", divider()), ("toolbox", toolbox())]:
+            with open(f"assets/{name}-{theme}.svg", "w") as f:
+                f.write(svg)
+            print(f"wrote {name}-{theme}.svg")
