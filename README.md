@@ -22,7 +22,7 @@ orkhan = {
 
 ### `$ ls projects/`
 
-| Project | What it does |
+| Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | What it does |
 |---|---|
 | <img src="./assets/glyphs/chemlit.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;[**chemlit**](https://github.com/0rkhann/chemlit) | Citation-grounded literature agent for chemoinformatics: hybrid search, cross-encoder reranking, PaperQA2 answers with claim-level citations, RDKit / ChEMBL compound checks. |
 | <img src="./assets/glyphs/microkatc.svg" width="28" height="28" align="absmiddle" alt=""/>&nbsp;[**MicroKatc**](https://github.com/0rkhann/MicroKatc) | Quantitative assessment of catalytic cycles with microkinetic modelling. |
