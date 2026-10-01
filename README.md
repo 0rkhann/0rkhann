@@ -16,13 +16,13 @@
 
 ```python
 orkhan = {
-    "role":       "PhD student · Lab de Chémoinformatique, Université de Strasbourg",
-    "working_on": "chemlit, an AI research agent: literature → hypotheses → code → results",
-    "into":       ["LLM agents for chemistry", "de novo molecular design",
-                   "chemical space analysis", "bayesian optimisation",
-                   "microkinetic modelling"],
-    "open_to":    ["research collaborations", "internships"],
-    "email":      "orkhan.abdullayev@etu.unistra.fr",
+    "role":         "PhD student · Lab de Chémoinformatique, Université de Strasbourg",
+    "working_on":   "chemlit, an AI research agent: literature → hypotheses → code → results",
+    "into":         ["LLM agents for chemistry", "de novo molecular design",
+                     "chemical space analysis", "bayesian optimisation",
+                     "microkinetic modelling"],
+    "open_to":      ["research collaborations", "internships"],
+    "email":        "orkhan.abdullayev@etu.unistra.fr",
 }
 ```
 
