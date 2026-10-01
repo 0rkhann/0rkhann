@@ -33,8 +33,8 @@ orkhan = {
 
 <p align="center">
   <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/toolbox-light.f9fb010e.svg"/>
-  <img src="./assets/toolbox-dark.6973b8c4.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, Hugging Face, Bayesian optimisation, LLMs, AI agents, Claude, Git, AWS"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/toolbox-light.2cfa798b.svg"/>
+  <img src="./assets/toolbox-dark.e24315ea.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, GTM, Bayesian Optimisation, RAG, AI Agents, Claude, Git, AWS"/>
 </picture>
 </p>
 

@@ -223,15 +223,15 @@ def divider():
 
 
 # periodic-table toolbox: families set the tile colour
-FAMILIES = {"ml": "Machine & deep learning", "chem": "Chemistry", "ai": "AI & agents", "infra": "Infrastructure"}
+FAMILIES = {"ml": "Machine & Deep Learning", "chem": "Chemistry", "ai": "AI & Agents", "infra": "Infrastructure"}
 # (row, column, symbol, name, family) on a 7-column grid shaped like the periodic table:
 # two corner tiles on top, two-and-two in the middle, a full bottom row
 ELEMENTS = [
     (0, 0, "Py", "Python", "ml"), (0, 6, "Rd", "RDKit", "chem"),
     (1, 0, "Pt", "PyTorch", "ml"), (1, 1, "Sk", "scikit-learn", "ml"),
     (1, 5, "Lx", "Linux", "infra"), (1, 6, "Dk", "Docker", "infra"),
-    (2, 0, "Hf", "Hugging Face", "ml"), (2, 1, "Bo", "Bayesian optimisation", "ml"),
-    (2, 2, "Lm", "LLMs", "ai"), (2, 3, "Ag", "AI agents", "ai"), (2, 4, "Cl", "Claude", "ai"),
+    (2, 0, "Gm", "GTM", "ml"), (2, 1, "Bo", "Bayesian Optimisation", "ml"),
+    (2, 2, "Rg", "RAG", "ai"), (2, 3, "Ag", "AI Agents", "ai"), (2, 4, "Cl", "Claude", "ai"),
     (2, 5, "Gt", "Git", "infra"), (2, 6, "Aw", "AWS", "infra"),
 ]
 
