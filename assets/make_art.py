@@ -180,8 +180,8 @@ def divider():
 
 # periodic-table toolbox: (symbol, name), grouped into families that set the tile colour
 FAMILIES = [
-    ("Machine learning", "#7aa2ff", [("Py", "Python"), ("Pt", "PyTorch"), ("Sk", "scikit-learn"), ("Hf", "Hugging Face")]),
-    ("Chemistry", TEAL, [("Rd", "RDKit"), ("Bo", "Bayesian optimisation")]),
+    ("Machine & deep learning", "#7aa2ff", [("Py", "Python"), ("Pt", "PyTorch"), ("Sk", "scikit-learn"), ("Hf", "Hugging Face"), ("Bo", "Bayesian optimisation")]),
+    ("Chemistry", TEAL, [("Rd", "RDKit")]),
     ("AI & agents", "#ff9e64", [("Lm", "LLMs"), ("Ag", "AI agents"), ("Cl", "Claude")]),
     ("Infrastructure", "#e3b341", [("Lx", "Linux"), ("Dk", "Docker"), ("Gt", "Git"), ("Aw", "AWS")]),
 ]
