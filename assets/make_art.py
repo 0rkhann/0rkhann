@@ -1,4 +1,4 @@
-"""Generate the static animated SVGs for the profile README: hero, agent trace, divider.
+"""Generate the static animated SVGs for the profile README: hero and divider.
 
 Run: uv run --with rdkit python assets/make_art.py
 """
@@ -156,52 +156,6 @@ def hero():
 '''
 
 
-def agent():
-    """Terminal card replaying the chemlit pipeline steps (taken from the chemlit README)."""
-    steps = [
-        ("expand", "plain-language rewrites, so other fields' vocabulary still matches"),
-        ("search", "OpenAlex · Semantic Scholar · PubMed · arXiv · SPECTER2 neighbours"),
-        ("rerank", "cross-encoder orders every candidate, an LLM judges relevance"),
-        ("read", "legal open-access full text only; retractions dropped"),
-        ("resolve", "OPSIN → PubChem → ChEMBL pipeline → RDKit alerts"),
-        ("answer", "PaperQA2 with claim-level citations, every DOI checked"),
-    ]
-    period, gap, first = 14, 1.0, 1.4
-    lines = []
-    y0 = 108
-    for i, (verb, what) in enumerate(steps):
-        y = y0 + i * 30
-        d = first + i * gap
-        lines.append(
-            f'<g class="step" style="animation-delay:{d:.1f}s">'
-            f'<text x="56" y="{y}" class="mono dim">├─</text>'
-            f'<text x="88" y="{y}" class="mono verb">{verb}</text>'
-            f'<text x="190" y="{y}" class="mono txt">{what}</text></g>'
-            f'<text x="1140" y="{y}" class="mono ok" text-anchor="end" style="animation-delay:{d + .6:.1f}s">✓</text>'
-        )
-    h = y0 + len(steps) * 30 + 26
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" aria-label="Animated replay of the chemlit agent pipeline: expand, search, rerank, read, resolve, answer.">
-  <style>
-    .mono {{ font:400 16px {MONO}; }}
-    .dim {{ fill:#484f58; }} .verb {{ fill:{TEAL}; font-weight:700; }} .txt {{ fill:#c9d1d9; }} .ok {{ fill:{TEAL}; font-weight:700; }}
-    .q {{ fill:{TEXT}; }} .p {{ fill:{TEAL}; }} .title {{ font:500 13px {MONO}; fill:{MUTED}; }}
-    .step, .ok {{ opacity:0; animation:show {period}s ease-out infinite backwards; }}
-    .caret {{ fill:{TEAL}; animation:blink 1s steps(1) infinite; }}
-    @keyframes show {{ 0% {{ opacity:0; transform:translateX(-6px); }} 3%, 85% {{ opacity:1; transform:none; }} 90%, 100% {{ opacity:0; }} }}
-    @keyframes blink {{ 50% {{ opacity:0; }} }}
-    @media (prefers-reduced-motion: reduce) {{ * {{ animation:none !important; }} .step, .ok {{ opacity:1; }} }}
-  </style>
-  <rect width="{W}" height="{h}" rx="14" fill="{BG}"/>
-  <rect x="1" y="1" width="{W - 2}" height="{h - 2}" rx="13" fill="none" stroke="{EDGE}"/>
-  <path d="M1,14 a13,13 0 0 1 13,-13 H{W - 14} a13,13 0 0 1 13,13 V38 H1 Z" fill="#161b22"/>
-  <circle cx="24" cy="20" r="6" fill="#ff5f57"/><circle cx="44" cy="20" r="6" fill="#febc2e"/><circle cx="64" cy="20" r="6" fill="#28c840"/>
-  <text x="{W // 2}" y="24" class="title" text-anchor="middle">chemlit · example run</text>
-  <text x="32" y="74" class="mono"><tspan class="p">$ </tspan><tspan class="q">chemlit ask "Which covalent warheads target KRAS G12C?"</tspan><tspan class="caret"> ▍</tspan></text>
-  {"".join(lines)}
-</svg>
-'''
-
-
 def divider():
     # a polyacene-like zigzag of hexagon edges with a pulse travelling along it
     pts, x, up = [], 0.0, True
@@ -224,7 +178,7 @@ def divider():
 
 
 if __name__ == "__main__":
-    for name, svg in [("hero.svg", hero()), ("agent.svg", agent()), ("divider.svg", divider())]:
+    for name, svg in [("hero.svg", hero()), ("divider.svg", divider())]:
         with open(f"assets/{name}", "w") as f:
             f.write(svg)
         print("wrote", name)

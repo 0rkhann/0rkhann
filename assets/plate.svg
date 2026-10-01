@@ -1,0 +1,557 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 332" width="1200" height="332" role="img" aria-label="0rkhann's contributions from Sep 2025 – Oct 2026 drawn as an assay plate: 2,234 contributions, 87 active days.">
+  <style>
+    .title { font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#e6edf3; letter-spacing:2px; }
+    .sub { font:400 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
+    .stat { font:400 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; fill:#8b949e; white-space:pre; }
+    .v { font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#4FD1C5; }
+    .cn { font:400 9px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
+    .rn { font:700 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
+    .mo { font:400 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
+    .well { fill:#1a222c; stroke:#2a3440; stroke-width:1; }
+    .hit { opacity:0; animation:read .5s ease-out forwards; }
+    .scan { fill:url(#beam); animation:sweep 2.26s linear .2s forwards; opacity:0; }
+    @keyframes read { from { opacity:0; } to { opacity:1; } }
+    @keyframes sweep { 0% { opacity:1; transform:translateX(0); } 92% { opacity:1; } 100% { opacity:0; transform:translateX(1031px); } }
+    @media (prefers-reduced-motion: reduce) { .hit { animation:none; opacity:1; } .scan { display:none; } }
+  </style>
+  <defs>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#4FD1C5" stop-opacity="0"/><stop offset=".85" stop-color="#4FD1C5" stop-opacity=".28"/><stop offset="1" stop-color="#4FD1C5" stop-opacity=".9"/></linearGradient>
+  </defs>
+  <rect width="1200" height="332" rx="14" fill="#0d1117"/>
+  <text x="57" y="34" class="title">PLATE READ · 0rkhann</text>
+  <text x="307" y="34" class="sub">Sep 2025 – Oct 2026 · 1 well = 1 day</text>
+  <text x="1142" y="34" class="stat" text-anchor="end"><tspan class="v">2,234</tspan> contributions   <tspan class="v">24%</tspan> hit rate   <tspan class="v">16d</tspan> longest run</text>
+  <path d="M75,68 H1130.2 a12,12 0 0 1 12,12 V261.6 a12,12 0 0 1 -12,12 H69 a12,12 0 0 1 -12,-12 V86 Z" fill="#111820" stroke="#2a3440" stroke-width="1.5"/>
+  <text x="101.0" y="92" class="cn">1</text>
+  <text x="120.6" y="92" class="cn">2</text>
+  <text x="140.2" y="92" class="cn">3</text>
+  <text x="159.8" y="92" class="cn">4</text>
+  <text x="179.4" y="92" class="cn">5</text>
+  <text x="199.0" y="92" class="cn">6</text>
+  <text x="218.6" y="92" class="cn">7</text>
+  <text x="238.2" y="92" class="cn">8</text>
+  <text x="257.8" y="92" class="cn">9</text>
+  <text x="277.4" y="92" class="cn">10</text>
+  <text x="297.0" y="92" class="cn">11</text>
+  <text x="316.6" y="92" class="cn">12</text>
+  <text x="336.2" y="92" class="cn">13</text>
+  <text x="355.8" y="92" class="cn">14</text>
+  <text x="375.4" y="92" class="cn">15</text>
+  <text x="395.0" y="92" class="cn">16</text>
+  <text x="414.6" y="92" class="cn">17</text>
+  <text x="434.2" y="92" class="cn">18</text>
+  <text x="453.8" y="92" class="cn">19</text>
+  <text x="473.4" y="92" class="cn">20</text>
+  <text x="493.0" y="92" class="cn">21</text>
+  <text x="512.6" y="92" class="cn">22</text>
+  <text x="532.2" y="92" class="cn">23</text>
+  <text x="551.8" y="92" class="cn">24</text>
+  <text x="571.4" y="92" class="cn">25</text>
+  <text x="591.0" y="92" class="cn">26</text>
+  <text x="610.6" y="92" class="cn">27</text>
+  <text x="630.2" y="92" class="cn">28</text>
+  <text x="649.8" y="92" class="cn">29</text>
+  <text x="669.4" y="92" class="cn">30</text>
+  <text x="689.0" y="92" class="cn">31</text>
+  <text x="708.6" y="92" class="cn">32</text>
+  <text x="728.2" y="92" class="cn">33</text>
+  <text x="747.8" y="92" class="cn">34</text>
+  <text x="767.4" y="92" class="cn">35</text>
+  <text x="787.0" y="92" class="cn">36</text>
+  <text x="806.6" y="92" class="cn">37</text>
+  <text x="826.2" y="92" class="cn">38</text>
+  <text x="845.8" y="92" class="cn">39</text>
+  <text x="865.4" y="92" class="cn">40</text>
+  <text x="885.0" y="92" class="cn">41</text>
+  <text x="904.6" y="92" class="cn">42</text>
+  <text x="924.2" y="92" class="cn">43</text>
+  <text x="943.8" y="92" class="cn">44</text>
+  <text x="963.4" y="92" class="cn">45</text>
+  <text x="983.0" y="92" class="cn">46</text>
+  <text x="1002.6" y="92" class="cn">47</text>
+  <text x="1022.2" y="92" class="cn">48</text>
+  <text x="1041.8" y="92" class="cn">49</text>
+  <text x="1061.4" y="92" class="cn">50</text>
+  <text x="1081.0" y="92" class="cn">51</text>
+  <text x="1100.6" y="92" class="cn">52</text>
+  <text x="1120.2" y="92" class="cn">53</text>
+  <text x="75" y="116.0" class="rn">A</text>
+  <text x="75" y="135.6" class="rn">B</text>
+  <text x="75" y="155.2" class="rn">C</text>
+  <text x="75" y="174.8" class="rn">D</text>
+  <text x="75" y="194.4" class="rn">E</text>
+  <text x="75" y="214.0" class="rn">F</text>
+  <text x="75" y="233.6" class="rn">G</text>
+  <circle cx="101.0" cy="112.0" r="7.4" class="well"><title>2025-09-28: 0 contributions</title></circle>
+  <circle cx="101.0" cy="131.6" r="7.4" class="well"><title>2025-09-29: 0 contributions</title></circle>
+  <circle cx="101.0" cy="151.2" r="7.4" class="well"><title>2025-09-30: 0 contributions</title></circle>
+  <circle cx="101.0" cy="170.8" r="7.4" class="well"><title>2025-10-01: 0 contributions</title></circle>
+  <circle cx="101.0" cy="190.4" r="7.4" class="well"><title>2025-10-02: 0 contributions</title></circle>
+  <circle cx="101.0" cy="210.0" r="7.4" class="well"><title>2025-10-03: 0 contributions</title></circle>
+  <circle cx="101.0" cy="229.6" r="7.4" class="well"><title>2025-10-04: 0 contributions</title></circle>
+  <circle cx="120.6" cy="112.0" r="7.4" class="well"><title>2025-10-05: 0 contributions</title></circle>
+  <text x="113.2" y="259.6" class="mo">Oct</text>
+  <circle cx="120.6" cy="131.6" r="7.4" class="well"><title>2025-10-06: 0 contributions</title></circle>
+  <circle cx="120.6" cy="151.2" r="7.4" class="well"><title>2025-10-07: 0 contributions</title></circle>
+  <circle cx="120.6" cy="170.8" r="7.4" class="well"><title>2025-10-08: 0 contributions</title></circle>
+  <circle cx="120.6" cy="190.4" r="7.4" class="well"><title>2025-10-09: 0 contributions</title></circle>
+  <circle cx="120.6" cy="210.0" r="7.4" class="well"/>
+  <circle cx="120.6" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.24s"><title>2025-10-10: 1 contribution</title></circle>
+  <circle cx="120.6" cy="229.6" r="7.4" class="well"><title>2025-10-11: 0 contributions</title></circle>
+  <circle cx="140.2" cy="112.0" r="7.4" class="well"><title>2025-10-12: 0 contributions</title></circle>
+  <circle cx="140.2" cy="131.6" r="7.4" class="well"/>
+  <circle cx="140.2" cy="131.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.27s"><title>2025-10-13: 1 contribution</title></circle>
+  <circle cx="140.2" cy="151.2" r="7.4" class="well"><title>2025-10-14: 0 contributions</title></circle>
+  <circle cx="140.2" cy="170.8" r="7.4" class="well"><title>2025-10-15: 0 contributions</title></circle>
+  <circle cx="140.2" cy="190.4" r="7.4" class="well"><title>2025-10-16: 0 contributions</title></circle>
+  <circle cx="140.2" cy="210.0" r="7.4" class="well"><title>2025-10-17: 0 contributions</title></circle>
+  <circle cx="140.2" cy="229.6" r="7.4" class="well"><title>2025-10-18: 0 contributions</title></circle>
+  <circle cx="159.8" cy="112.0" r="7.4" class="well"><title>2025-10-19: 0 contributions</title></circle>
+  <circle cx="159.8" cy="131.6" r="7.4" class="well"><title>2025-10-20: 0 contributions</title></circle>
+  <circle cx="159.8" cy="151.2" r="7.4" class="well"><title>2025-10-21: 0 contributions</title></circle>
+  <circle cx="159.8" cy="170.8" r="7.4" class="well"><title>2025-10-22: 0 contributions</title></circle>
+  <circle cx="159.8" cy="190.4" r="7.4" class="well"><title>2025-10-23: 0 contributions</title></circle>
+  <circle cx="159.8" cy="210.0" r="7.4" class="well"><title>2025-10-24: 0 contributions</title></circle>
+  <circle cx="159.8" cy="229.6" r="7.4" class="well"><title>2025-10-25: 0 contributions</title></circle>
+  <circle cx="179.4" cy="112.0" r="7.4" class="well"><title>2025-10-26: 0 contributions</title></circle>
+  <circle cx="179.4" cy="131.6" r="7.4" class="well"><title>2025-10-27: 0 contributions</title></circle>
+  <circle cx="179.4" cy="151.2" r="7.4" class="well"><title>2025-10-28: 0 contributions</title></circle>
+  <circle cx="179.4" cy="170.8" r="7.4" class="well"><title>2025-10-29: 0 contributions</title></circle>
+  <circle cx="179.4" cy="190.4" r="7.4" class="well"><title>2025-10-30: 0 contributions</title></circle>
+  <circle cx="179.4" cy="210.0" r="7.4" class="well"><title>2025-10-31: 0 contributions</title></circle>
+  <circle cx="179.4" cy="229.6" r="7.4" class="well"><title>2025-11-01: 0 contributions</title></circle>
+  <circle cx="199.0" cy="112.0" r="7.4" class="well"><title>2025-11-02: 0 contributions</title></circle>
+  <text x="191.6" y="259.6" class="mo">Nov</text>
+  <circle cx="199.0" cy="131.6" r="7.4" class="well"><title>2025-11-03: 0 contributions</title></circle>
+  <circle cx="199.0" cy="151.2" r="7.4" class="well"><title>2025-11-04: 0 contributions</title></circle>
+  <circle cx="199.0" cy="170.8" r="7.4" class="well"><title>2025-11-05: 0 contributions</title></circle>
+  <circle cx="199.0" cy="190.4" r="7.4" class="well"><title>2025-11-06: 0 contributions</title></circle>
+  <circle cx="199.0" cy="210.0" r="7.4" class="well"><title>2025-11-07: 0 contributions</title></circle>
+  <circle cx="199.0" cy="229.6" r="7.4" class="well"><title>2025-11-08: 0 contributions</title></circle>
+  <circle cx="218.6" cy="112.0" r="7.4" class="well"><title>2025-11-09: 0 contributions</title></circle>
+  <circle cx="218.6" cy="131.6" r="7.4" class="well"><title>2025-11-10: 0 contributions</title></circle>
+  <circle cx="218.6" cy="151.2" r="7.4" class="well"><title>2025-11-11: 0 contributions</title></circle>
+  <circle cx="218.6" cy="170.8" r="7.4" class="well"><title>2025-11-12: 0 contributions</title></circle>
+  <circle cx="218.6" cy="190.4" r="7.4" class="well"><title>2025-11-13: 0 contributions</title></circle>
+  <circle cx="218.6" cy="210.0" r="7.4" class="well"><title>2025-11-14: 0 contributions</title></circle>
+  <circle cx="218.6" cy="229.6" r="7.4" class="well"><title>2025-11-15: 0 contributions</title></circle>
+  <circle cx="238.2" cy="112.0" r="7.4" class="well"><title>2025-11-16: 0 contributions</title></circle>
+  <circle cx="238.2" cy="131.6" r="7.4" class="well"><title>2025-11-17: 0 contributions</title></circle>
+  <circle cx="238.2" cy="151.2" r="7.4" class="well"><title>2025-11-18: 0 contributions</title></circle>
+  <circle cx="238.2" cy="170.8" r="7.4" class="well"><title>2025-11-19: 0 contributions</title></circle>
+  <circle cx="238.2" cy="190.4" r="7.4" class="well"><title>2025-11-20: 0 contributions</title></circle>
+  <circle cx="238.2" cy="210.0" r="7.4" class="well"><title>2025-11-21: 0 contributions</title></circle>
+  <circle cx="238.2" cy="229.6" r="7.4" class="well"><title>2025-11-22: 0 contributions</title></circle>
+  <circle cx="257.8" cy="112.0" r="7.4" class="well"><title>2025-11-23: 0 contributions</title></circle>
+  <circle cx="257.8" cy="131.6" r="7.4" class="well"><title>2025-11-24: 0 contributions</title></circle>
+  <circle cx="257.8" cy="151.2" r="7.4" class="well"><title>2025-11-25: 0 contributions</title></circle>
+  <circle cx="257.8" cy="170.8" r="7.4" class="well"/>
+  <circle cx="257.8" cy="170.8" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.48s"><title>2025-11-26: 2 contributions</title></circle>
+  <circle cx="257.8" cy="190.4" r="7.4" class="well"/>
+  <circle cx="257.8" cy="190.4" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.48s"><title>2025-11-27: 1 contribution</title></circle>
+  <circle cx="257.8" cy="210.0" r="7.4" class="well"/>
+  <circle cx="257.8" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.48s"><title>2025-11-28: 1 contribution</title></circle>
+  <circle cx="257.8" cy="229.6" r="7.4" class="well"><title>2025-11-29: 0 contributions</title></circle>
+  <circle cx="277.4" cy="112.0" r="7.4" class="well"><title>2025-11-30: 0 contributions</title></circle>
+  <circle cx="277.4" cy="131.6" r="7.4" class="well"><title>2025-12-01: 0 contributions</title></circle>
+  <circle cx="277.4" cy="151.2" r="7.4" class="well"><title>2025-12-02: 0 contributions</title></circle>
+  <circle cx="277.4" cy="170.8" r="7.4" class="well"><title>2025-12-03: 0 contributions</title></circle>
+  <circle cx="277.4" cy="190.4" r="7.4" class="well"><title>2025-12-04: 0 contributions</title></circle>
+  <circle cx="277.4" cy="210.0" r="7.4" class="well"><title>2025-12-05: 0 contributions</title></circle>
+  <circle cx="277.4" cy="229.6" r="7.4" class="well"><title>2025-12-06: 0 contributions</title></circle>
+  <circle cx="297.0" cy="112.0" r="7.4" class="well"><title>2025-12-07: 0 contributions</title></circle>
+  <text x="289.6" y="259.6" class="mo">Dec</text>
+  <circle cx="297.0" cy="131.6" r="7.4" class="well"><title>2025-12-08: 0 contributions</title></circle>
+  <circle cx="297.0" cy="151.2" r="7.4" class="well"><title>2025-12-09: 0 contributions</title></circle>
+  <circle cx="297.0" cy="170.8" r="7.4" class="well"><title>2025-12-10: 0 contributions</title></circle>
+  <circle cx="297.0" cy="190.4" r="7.4" class="well"><title>2025-12-11: 0 contributions</title></circle>
+  <circle cx="297.0" cy="210.0" r="7.4" class="well"><title>2025-12-12: 0 contributions</title></circle>
+  <circle cx="297.0" cy="229.6" r="7.4" class="well"><title>2025-12-13: 0 contributions</title></circle>
+  <circle cx="316.6" cy="112.0" r="7.4" class="well"><title>2025-12-14: 0 contributions</title></circle>
+  <circle cx="316.6" cy="131.6" r="7.4" class="well"><title>2025-12-15: 0 contributions</title></circle>
+  <circle cx="316.6" cy="151.2" r="7.4" class="well"><title>2025-12-16: 0 contributions</title></circle>
+  <circle cx="316.6" cy="170.8" r="7.4" class="well"><title>2025-12-17: 0 contributions</title></circle>
+  <circle cx="316.6" cy="190.4" r="7.4" class="well"><title>2025-12-18: 0 contributions</title></circle>
+  <circle cx="316.6" cy="210.0" r="7.4" class="well"><title>2025-12-19: 0 contributions</title></circle>
+  <circle cx="316.6" cy="229.6" r="7.4" class="well"><title>2025-12-20: 0 contributions</title></circle>
+  <circle cx="336.2" cy="112.0" r="7.4" class="well"><title>2025-12-21: 0 contributions</title></circle>
+  <circle cx="336.2" cy="131.6" r="7.4" class="well"><title>2025-12-22: 0 contributions</title></circle>
+  <circle cx="336.2" cy="151.2" r="7.4" class="well"><title>2025-12-23: 0 contributions</title></circle>
+  <circle cx="336.2" cy="170.8" r="7.4" class="well"><title>2025-12-24: 0 contributions</title></circle>
+  <circle cx="336.2" cy="190.4" r="7.4" class="well"><title>2025-12-25: 0 contributions</title></circle>
+  <circle cx="336.2" cy="210.0" r="7.4" class="well"><title>2025-12-26: 0 contributions</title></circle>
+  <circle cx="336.2" cy="229.6" r="7.4" class="well"><title>2025-12-27: 0 contributions</title></circle>
+  <circle cx="355.8" cy="112.0" r="7.4" class="well"><title>2025-12-28: 0 contributions</title></circle>
+  <circle cx="355.8" cy="131.6" r="7.4" class="well"><title>2025-12-29: 0 contributions</title></circle>
+  <circle cx="355.8" cy="151.2" r="7.4" class="well"><title>2025-12-30: 0 contributions</title></circle>
+  <circle cx="355.8" cy="170.8" r="7.4" class="well"><title>2025-12-31: 0 contributions</title></circle>
+  <circle cx="355.8" cy="190.4" r="7.4" class="well"><title>2026-01-01: 0 contributions</title></circle>
+  <circle cx="355.8" cy="210.0" r="7.4" class="well"><title>2026-01-02: 0 contributions</title></circle>
+  <circle cx="355.8" cy="229.6" r="7.4" class="well"><title>2026-01-03: 0 contributions</title></circle>
+  <circle cx="375.4" cy="112.0" r="7.4" class="well"><title>2026-01-04: 0 contributions</title></circle>
+  <text x="368.0" y="259.6" class="mo">Jan</text>
+  <circle cx="375.4" cy="131.6" r="7.4" class="well"><title>2026-01-05: 0 contributions</title></circle>
+  <circle cx="375.4" cy="151.2" r="7.4" class="well"><title>2026-01-06: 0 contributions</title></circle>
+  <circle cx="375.4" cy="170.8" r="7.4" class="well"><title>2026-01-07: 0 contributions</title></circle>
+  <circle cx="375.4" cy="190.4" r="7.4" class="well"><title>2026-01-08: 0 contributions</title></circle>
+  <circle cx="375.4" cy="210.0" r="7.4" class="well"><title>2026-01-09: 0 contributions</title></circle>
+  <circle cx="375.4" cy="229.6" r="7.4" class="well"><title>2026-01-10: 0 contributions</title></circle>
+  <circle cx="395.0" cy="112.0" r="7.4" class="well"><title>2026-01-11: 0 contributions</title></circle>
+  <circle cx="395.0" cy="131.6" r="7.4" class="well"><title>2026-01-12: 0 contributions</title></circle>
+  <circle cx="395.0" cy="151.2" r="7.4" class="well"><title>2026-01-13: 0 contributions</title></circle>
+  <circle cx="395.0" cy="170.8" r="7.4" class="well"><title>2026-01-14: 0 contributions</title></circle>
+  <circle cx="395.0" cy="190.4" r="7.4" class="well"><title>2026-01-15: 0 contributions</title></circle>
+  <circle cx="395.0" cy="210.0" r="7.4" class="well"><title>2026-01-16: 0 contributions</title></circle>
+  <circle cx="395.0" cy="229.6" r="7.4" class="well"><title>2026-01-17: 0 contributions</title></circle>
+  <circle cx="414.6" cy="112.0" r="7.4" class="well"><title>2026-01-18: 0 contributions</title></circle>
+  <circle cx="414.6" cy="131.6" r="7.4" class="well"><title>2026-01-19: 0 contributions</title></circle>
+  <circle cx="414.6" cy="151.2" r="7.4" class="well"><title>2026-01-20: 0 contributions</title></circle>
+  <circle cx="414.6" cy="170.8" r="7.4" class="well"><title>2026-01-21: 0 contributions</title></circle>
+  <circle cx="414.6" cy="190.4" r="7.4" class="well"><title>2026-01-22: 0 contributions</title></circle>
+  <circle cx="414.6" cy="210.0" r="7.4" class="well"><title>2026-01-23: 0 contributions</title></circle>
+  <circle cx="414.6" cy="229.6" r="7.4" class="well"><title>2026-01-24: 0 contributions</title></circle>
+  <circle cx="434.2" cy="112.0" r="7.4" class="well"><title>2026-01-25: 0 contributions</title></circle>
+  <circle cx="434.2" cy="131.6" r="7.4" class="well"><title>2026-01-26: 0 contributions</title></circle>
+  <circle cx="434.2" cy="151.2" r="7.4" class="well"><title>2026-01-27: 0 contributions</title></circle>
+  <circle cx="434.2" cy="170.8" r="7.4" class="well"><title>2026-01-28: 0 contributions</title></circle>
+  <circle cx="434.2" cy="190.4" r="7.4" class="well"/>
+  <circle cx="434.2" cy="190.4" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.80s"><title>2026-01-29: 5 contributions</title></circle>
+  <circle cx="434.2" cy="210.0" r="7.4" class="well"><title>2026-01-30: 0 contributions</title></circle>
+  <circle cx="434.2" cy="229.6" r="7.4" class="well"><title>2026-01-31: 0 contributions</title></circle>
+  <circle cx="453.8" cy="112.0" r="7.4" class="well"><title>2026-02-01: 0 contributions</title></circle>
+  <text x="446.4" y="259.6" class="mo">Feb</text>
+  <circle cx="453.8" cy="131.6" r="7.4" class="well"><title>2026-02-02: 0 contributions</title></circle>
+  <circle cx="453.8" cy="151.2" r="7.4" class="well"><title>2026-02-03: 0 contributions</title></circle>
+  <circle cx="453.8" cy="170.8" r="7.4" class="well"><title>2026-02-04: 0 contributions</title></circle>
+  <circle cx="453.8" cy="190.4" r="7.4" class="well"><title>2026-02-05: 0 contributions</title></circle>
+  <circle cx="453.8" cy="210.0" r="7.4" class="well"/>
+  <circle cx="453.8" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.83s"><title>2026-02-06: 5 contributions</title></circle>
+  <circle cx="453.8" cy="229.6" r="7.4" class="well"><title>2026-02-07: 0 contributions</title></circle>
+  <circle cx="473.4" cy="112.0" r="7.4" class="well"/>
+  <circle cx="473.4" cy="112.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:0.86s"><title>2026-02-08: 16 contributions</title></circle>
+  <circle cx="473.4" cy="131.6" r="7.4" class="well"><title>2026-02-09: 0 contributions</title></circle>
+  <circle cx="473.4" cy="151.2" r="7.4" class="well"><title>2026-02-10: 0 contributions</title></circle>
+  <circle cx="473.4" cy="170.8" r="7.4" class="well"/>
+  <circle cx="473.4" cy="170.8" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:0.86s"><title>2026-02-11: 7 contributions</title></circle>
+  <circle cx="473.4" cy="190.4" r="7.4" class="well"/>
+  <circle cx="473.4" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:0.86s"><title>2026-02-12: 6 contributions</title></circle>
+  <circle cx="473.4" cy="210.0" r="7.4" class="well"/>
+  <circle cx="473.4" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.86s"><title>2026-02-13: 1 contribution</title></circle>
+  <circle cx="473.4" cy="229.6" r="7.4" class="well"><title>2026-02-14: 0 contributions</title></circle>
+  <circle cx="493.0" cy="112.0" r="7.4" class="well"><title>2026-02-15: 0 contributions</title></circle>
+  <circle cx="493.0" cy="131.6" r="7.4" class="well"/>
+  <circle cx="493.0" cy="131.6" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:0.90s"><title>2026-02-16: 6 contributions</title></circle>
+  <circle cx="493.0" cy="151.2" r="7.4" class="well"/>
+  <circle cx="493.0" cy="151.2" r="7.4" fill="#12403d" class="hit" style="animation-delay:0.90s"><title>2026-02-17: 3 contributions</title></circle>
+  <circle cx="493.0" cy="170.8" r="7.4" class="well"><title>2026-02-18: 0 contributions</title></circle>
+  <circle cx="493.0" cy="190.4" r="7.4" class="well"/>
+  <circle cx="493.0" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:0.90s"><title>2026-02-19: 6 contributions</title></circle>
+  <circle cx="493.0" cy="210.0" r="7.4" class="well"><title>2026-02-20: 0 contributions</title></circle>
+  <circle cx="493.0" cy="229.6" r="7.4" class="well"><title>2026-02-21: 0 contributions</title></circle>
+  <circle cx="512.6" cy="112.0" r="7.4" class="well"><title>2026-02-22: 0 contributions</title></circle>
+  <circle cx="512.6" cy="131.6" r="7.4" class="well"><title>2026-02-23: 0 contributions</title></circle>
+  <circle cx="512.6" cy="151.2" r="7.4" class="well"><title>2026-02-24: 0 contributions</title></circle>
+  <circle cx="512.6" cy="170.8" r="7.4" class="well"><title>2026-02-25: 0 contributions</title></circle>
+  <circle cx="512.6" cy="190.4" r="7.4" class="well"><title>2026-02-26: 0 contributions</title></circle>
+  <circle cx="512.6" cy="210.0" r="7.4" class="well"><title>2026-02-27: 0 contributions</title></circle>
+  <circle cx="512.6" cy="229.6" r="7.4" class="well"><title>2026-02-28: 0 contributions</title></circle>
+  <circle cx="532.2" cy="112.0" r="7.4" class="well"><title>2026-03-01: 0 contributions</title></circle>
+  <text x="524.8" y="259.6" class="mo">Mar</text>
+  <circle cx="532.2" cy="131.6" r="7.4" class="well"><title>2026-03-02: 0 contributions</title></circle>
+  <circle cx="532.2" cy="151.2" r="7.4" class="well"><title>2026-03-03: 0 contributions</title></circle>
+  <circle cx="532.2" cy="170.8" r="7.4" class="well"><title>2026-03-04: 0 contributions</title></circle>
+  <circle cx="532.2" cy="190.4" r="7.4" class="well"><title>2026-03-05: 0 contributions</title></circle>
+  <circle cx="532.2" cy="210.0" r="7.4" class="well"><title>2026-03-06: 0 contributions</title></circle>
+  <circle cx="532.2" cy="229.6" r="7.4" class="well"><title>2026-03-07: 0 contributions</title></circle>
+  <circle cx="551.8" cy="112.0" r="7.4" class="well"><title>2026-03-08: 0 contributions</title></circle>
+  <circle cx="551.8" cy="131.6" r="7.4" class="well"><title>2026-03-09: 0 contributions</title></circle>
+  <circle cx="551.8" cy="151.2" r="7.4" class="well"/>
+  <circle cx="551.8" cy="151.2" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.01s"><title>2026-03-10: 16 contributions</title></circle>
+  <circle cx="551.8" cy="170.8" r="7.4" class="well"><title>2026-03-11: 0 contributions</title></circle>
+  <circle cx="551.8" cy="190.4" r="7.4" class="well"/>
+  <circle cx="551.8" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.01s"><title>2026-03-12: 8 contributions</title></circle>
+  <circle cx="551.8" cy="210.0" r="7.4" class="well"><title>2026-03-13: 0 contributions</title></circle>
+  <circle cx="551.8" cy="229.6" r="7.4" class="well"><title>2026-03-14: 0 contributions</title></circle>
+  <circle cx="571.4" cy="112.0" r="7.4" class="well"/>
+  <circle cx="571.4" cy="112.0" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.04s"><title>2026-03-15: 8 contributions</title></circle>
+  <circle cx="571.4" cy="131.6" r="7.4" class="well"/>
+  <circle cx="571.4" cy="131.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.04s"><title>2026-03-16: 3 contributions</title></circle>
+  <circle cx="571.4" cy="151.2" r="7.4" class="well"><title>2026-03-17: 0 contributions</title></circle>
+  <circle cx="571.4" cy="170.8" r="7.4" class="well"><title>2026-03-18: 0 contributions</title></circle>
+  <circle cx="571.4" cy="190.4" r="7.4" class="well"><title>2026-03-19: 0 contributions</title></circle>
+  <circle cx="571.4" cy="210.0" r="7.4" class="well"/>
+  <circle cx="571.4" cy="210.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.04s"><title>2026-03-20: 14 contributions</title></circle>
+  <circle cx="571.4" cy="229.6" r="7.4" class="well"><title>2026-03-21: 0 contributions</title></circle>
+  <circle cx="591.0" cy="112.0" r="7.4" class="well"><title>2026-03-22: 0 contributions</title></circle>
+  <circle cx="591.0" cy="131.6" r="7.4" class="well"><title>2026-03-23: 0 contributions</title></circle>
+  <circle cx="591.0" cy="151.2" r="7.4" class="well"><title>2026-03-24: 0 contributions</title></circle>
+  <circle cx="591.0" cy="170.8" r="7.4" class="well"><title>2026-03-25: 0 contributions</title></circle>
+  <circle cx="591.0" cy="190.4" r="7.4" class="well"><title>2026-03-26: 0 contributions</title></circle>
+  <circle cx="591.0" cy="210.0" r="7.4" class="well"/>
+  <circle cx="591.0" cy="210.0" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.08s"><title>2026-03-27: 11 contributions</title></circle>
+  <circle cx="591.0" cy="229.6" r="7.4" class="well"><title>2026-03-28: 0 contributions</title></circle>
+  <circle cx="610.6" cy="112.0" r="7.4" class="well"><title>2026-03-29: 0 contributions</title></circle>
+  <circle cx="610.6" cy="131.6" r="7.4" class="well"><title>2026-03-30: 0 contributions</title></circle>
+  <circle cx="610.6" cy="151.2" r="7.4" class="well"><title>2026-03-31: 0 contributions</title></circle>
+  <circle cx="610.6" cy="170.8" r="7.4" class="well"><title>2026-04-01: 0 contributions</title></circle>
+  <circle cx="610.6" cy="190.4" r="7.4" class="well"><title>2026-04-02: 0 contributions</title></circle>
+  <circle cx="610.6" cy="210.0" r="7.4" class="well"><title>2026-04-03: 0 contributions</title></circle>
+  <circle cx="610.6" cy="229.6" r="7.4" class="well"><title>2026-04-04: 0 contributions</title></circle>
+  <circle cx="630.2" cy="112.0" r="7.4" class="well"><title>2026-04-05: 0 contributions</title></circle>
+  <text x="622.8" y="259.6" class="mo">Apr</text>
+  <circle cx="630.2" cy="131.6" r="7.4" class="well"><title>2026-04-06: 0 contributions</title></circle>
+  <circle cx="630.2" cy="151.2" r="7.4" class="well"><title>2026-04-07: 0 contributions</title></circle>
+  <circle cx="630.2" cy="170.8" r="7.4" class="well"/>
+  <circle cx="630.2" cy="170.8" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.15s"><title>2026-04-08: 16 contributions</title></circle>
+  <circle cx="630.2" cy="190.4" r="7.4" class="well"/>
+  <circle cx="630.2" cy="190.4" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.15s"><title>2026-04-09: 14 contributions</title></circle>
+  <circle cx="630.2" cy="210.0" r="7.4" class="well"><title>2026-04-10: 0 contributions</title></circle>
+  <circle cx="630.2" cy="229.6" r="7.4" class="well"><title>2026-04-11: 0 contributions</title></circle>
+  <circle cx="649.8" cy="112.0" r="7.4" class="well"><title>2026-04-12: 0 contributions</title></circle>
+  <circle cx="649.8" cy="131.6" r="7.4" class="well"/>
+  <circle cx="649.8" cy="131.6" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.18s"><title>2026-04-13: 8 contributions</title></circle>
+  <circle cx="649.8" cy="151.2" r="7.4" class="well"/>
+  <circle cx="649.8" cy="151.2" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.18s"><title>2026-04-14: 6 contributions</title></circle>
+  <circle cx="649.8" cy="170.8" r="7.4" class="well"/>
+  <circle cx="649.8" cy="170.8" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.18s"><title>2026-04-15: 8 contributions</title></circle>
+  <circle cx="649.8" cy="190.4" r="7.4" class="well"><title>2026-04-16: 0 contributions</title></circle>
+  <circle cx="649.8" cy="210.0" r="7.4" class="well"><title>2026-04-17: 0 contributions</title></circle>
+  <circle cx="649.8" cy="229.6" r="7.4" class="well"><title>2026-04-18: 0 contributions</title></circle>
+  <circle cx="669.4" cy="112.0" r="7.4" class="well"><title>2026-04-19: 0 contributions</title></circle>
+  <circle cx="669.4" cy="131.6" r="7.4" class="well"><title>2026-04-20: 0 contributions</title></circle>
+  <circle cx="669.4" cy="151.2" r="7.4" class="well"><title>2026-04-21: 0 contributions</title></circle>
+  <circle cx="669.4" cy="170.8" r="7.4" class="well"><title>2026-04-22: 0 contributions</title></circle>
+  <circle cx="669.4" cy="190.4" r="7.4" class="well"><title>2026-04-23: 0 contributions</title></circle>
+  <circle cx="669.4" cy="210.0" r="7.4" class="well"><title>2026-04-24: 0 contributions</title></circle>
+  <circle cx="669.4" cy="229.6" r="7.4" class="well"><title>2026-04-25: 0 contributions</title></circle>
+  <circle cx="689.0" cy="112.0" r="7.4" class="well"><title>2026-04-26: 0 contributions</title></circle>
+  <circle cx="689.0" cy="131.6" r="7.4" class="well"/>
+  <circle cx="689.0" cy="131.6" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.25s"><title>2026-04-27: 8 contributions</title></circle>
+  <circle cx="689.0" cy="151.2" r="7.4" class="well"><title>2026-04-28: 0 contributions</title></circle>
+  <circle cx="689.0" cy="170.8" r="7.4" class="well"><title>2026-04-29: 0 contributions</title></circle>
+  <circle cx="689.0" cy="190.4" r="7.4" class="well"><title>2026-04-30: 0 contributions</title></circle>
+  <circle cx="689.0" cy="210.0" r="7.4" class="well"><title>2026-05-01: 0 contributions</title></circle>
+  <circle cx="689.0" cy="229.6" r="7.4" class="well"><title>2026-05-02: 0 contributions</title></circle>
+  <circle cx="708.6" cy="112.0" r="7.4" class="well"><title>2026-05-03: 0 contributions</title></circle>
+  <text x="701.2" y="259.6" class="mo">May</text>
+  <circle cx="708.6" cy="131.6" r="7.4" class="well"><title>2026-05-04: 0 contributions</title></circle>
+  <circle cx="708.6" cy="151.2" r="7.4" class="well"/>
+  <circle cx="708.6" cy="151.2" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.29s"><title>2026-05-05: 8 contributions</title></circle>
+  <circle cx="708.6" cy="170.8" r="7.4" class="well"/>
+  <circle cx="708.6" cy="170.8" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.29s"><title>2026-05-06: 4 contributions</title></circle>
+  <circle cx="708.6" cy="190.4" r="7.4" class="well"/>
+  <circle cx="708.6" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.29s"><title>2026-05-07: 8 contributions</title></circle>
+  <circle cx="708.6" cy="210.0" r="7.4" class="well"><title>2026-05-08: 0 contributions</title></circle>
+  <circle cx="708.6" cy="229.6" r="7.4" class="well"><title>2026-05-09: 0 contributions</title></circle>
+  <circle cx="728.2" cy="112.0" r="7.4" class="well"><title>2026-05-10: 0 contributions</title></circle>
+  <circle cx="728.2" cy="131.6" r="7.4" class="well"><title>2026-05-11: 0 contributions</title></circle>
+  <circle cx="728.2" cy="151.2" r="7.4" class="well"><title>2026-05-12: 0 contributions</title></circle>
+  <circle cx="728.2" cy="170.8" r="7.4" class="well"/>
+  <circle cx="728.2" cy="170.8" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.32s"><title>2026-05-13: 14 contributions</title></circle>
+  <circle cx="728.2" cy="190.4" r="7.4" class="well"/>
+  <circle cx="728.2" cy="190.4" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.32s"><title>2026-05-14: 2 contributions</title></circle>
+  <circle cx="728.2" cy="210.0" r="7.4" class="well"/>
+  <circle cx="728.2" cy="210.0" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.32s"><title>2026-05-15: 9 contributions</title></circle>
+  <circle cx="728.2" cy="229.6" r="7.4" class="well"><title>2026-05-16: 0 contributions</title></circle>
+  <circle cx="747.8" cy="112.0" r="7.4" class="well"><title>2026-05-17: 0 contributions</title></circle>
+  <circle cx="747.8" cy="131.6" r="7.4" class="well"><title>2026-05-18: 0 contributions</title></circle>
+  <circle cx="747.8" cy="151.2" r="7.4" class="well"><title>2026-05-19: 0 contributions</title></circle>
+  <circle cx="747.8" cy="170.8" r="7.4" class="well"><title>2026-05-20: 0 contributions</title></circle>
+  <circle cx="747.8" cy="190.4" r="7.4" class="well"><title>2026-05-21: 0 contributions</title></circle>
+  <circle cx="747.8" cy="210.0" r="7.4" class="well"><title>2026-05-22: 0 contributions</title></circle>
+  <circle cx="747.8" cy="229.6" r="7.4" class="well"><title>2026-05-23: 0 contributions</title></circle>
+  <circle cx="767.4" cy="112.0" r="7.4" class="well"><title>2026-05-24: 0 contributions</title></circle>
+  <circle cx="767.4" cy="131.6" r="7.4" class="well"><title>2026-05-25: 0 contributions</title></circle>
+  <circle cx="767.4" cy="151.2" r="7.4" class="well"><title>2026-05-26: 0 contributions</title></circle>
+  <circle cx="767.4" cy="170.8" r="7.4" class="well"><title>2026-05-27: 0 contributions</title></circle>
+  <circle cx="767.4" cy="190.4" r="7.4" class="well"><title>2026-05-28: 0 contributions</title></circle>
+  <circle cx="767.4" cy="210.0" r="7.4" class="well"/>
+  <circle cx="767.4" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.39s"><title>2026-05-29: 3 contributions</title></circle>
+  <circle cx="767.4" cy="229.6" r="7.4" class="well"/>
+  <circle cx="767.4" cy="229.6" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.39s"><title>2026-05-30: 7 contributions</title></circle>
+  <circle cx="787.0" cy="112.0" r="7.4" class="well"/>
+  <circle cx="787.0" cy="112.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.43s"><title>2026-05-31: 1 contribution</title></circle>
+  <circle cx="787.0" cy="131.6" r="7.4" class="well"><title>2026-06-01: 0 contributions</title></circle>
+  <circle cx="787.0" cy="151.2" r="7.4" class="well"><title>2026-06-02: 0 contributions</title></circle>
+  <circle cx="787.0" cy="170.8" r="7.4" class="well"/>
+  <circle cx="787.0" cy="170.8" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.43s"><title>2026-06-03: 5 contributions</title></circle>
+  <circle cx="787.0" cy="190.4" r="7.4" class="well"/>
+  <circle cx="787.0" cy="190.4" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.43s"><title>2026-06-04: 3 contributions</title></circle>
+  <circle cx="787.0" cy="210.0" r="7.4" class="well"/>
+  <circle cx="787.0" cy="210.0" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.43s"><title>2026-06-05: 4 contributions</title></circle>
+  <circle cx="787.0" cy="229.6" r="7.4" class="well"><title>2026-06-06: 0 contributions</title></circle>
+  <circle cx="806.6" cy="112.0" r="7.4" class="well"><title>2026-06-07: 0 contributions</title></circle>
+  <text x="799.2" y="259.6" class="mo">Jun</text>
+  <circle cx="806.6" cy="131.6" r="7.4" class="well"/>
+  <circle cx="806.6" cy="131.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.46s"><title>2026-06-08: 1 contribution</title></circle>
+  <circle cx="806.6" cy="151.2" r="7.4" class="well"/>
+  <circle cx="806.6" cy="151.2" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.46s"><title>2026-06-09: 1 contribution</title></circle>
+  <circle cx="806.6" cy="170.8" r="7.4" class="well"><title>2026-06-10: 0 contributions</title></circle>
+  <circle cx="806.6" cy="190.4" r="7.4" class="well"><title>2026-06-11: 0 contributions</title></circle>
+  <circle cx="806.6" cy="210.0" r="7.4" class="well"><title>2026-06-12: 0 contributions</title></circle>
+  <circle cx="806.6" cy="229.6" r="7.4" class="well"><title>2026-06-13: 0 contributions</title></circle>
+  <circle cx="826.2" cy="112.0" r="7.4" class="well"><title>2026-06-14: 0 contributions</title></circle>
+  <circle cx="826.2" cy="131.6" r="7.4" class="well"><title>2026-06-15: 0 contributions</title></circle>
+  <circle cx="826.2" cy="151.2" r="7.4" class="well"><title>2026-06-16: 0 contributions</title></circle>
+  <circle cx="826.2" cy="170.8" r="7.4" class="well"><title>2026-06-17: 0 contributions</title></circle>
+  <circle cx="826.2" cy="190.4" r="7.4" class="well"><title>2026-06-18: 0 contributions</title></circle>
+  <circle cx="826.2" cy="210.0" r="7.4" class="well"><title>2026-06-19: 0 contributions</title></circle>
+  <circle cx="826.2" cy="229.6" r="7.4" class="well"><title>2026-06-20: 0 contributions</title></circle>
+  <circle cx="845.8" cy="112.0" r="7.4" class="well"><title>2026-06-21: 0 contributions</title></circle>
+  <circle cx="845.8" cy="131.6" r="7.4" class="well"><title>2026-06-22: 0 contributions</title></circle>
+  <circle cx="845.8" cy="151.2" r="7.4" class="well"><title>2026-06-23: 0 contributions</title></circle>
+  <circle cx="845.8" cy="170.8" r="7.4" class="well"><title>2026-06-24: 0 contributions</title></circle>
+  <circle cx="845.8" cy="190.4" r="7.4" class="well"><title>2026-06-25: 0 contributions</title></circle>
+  <circle cx="845.8" cy="210.0" r="7.4" class="well"><title>2026-06-26: 0 contributions</title></circle>
+  <circle cx="845.8" cy="229.6" r="7.4" class="well"><title>2026-06-27: 0 contributions</title></circle>
+  <circle cx="865.4" cy="112.0" r="7.4" class="well"><title>2026-06-28: 0 contributions</title></circle>
+  <circle cx="865.4" cy="131.6" r="7.4" class="well"><title>2026-06-29: 0 contributions</title></circle>
+  <circle cx="865.4" cy="151.2" r="7.4" class="well"><title>2026-06-30: 0 contributions</title></circle>
+  <circle cx="865.4" cy="170.8" r="7.4" class="well"><title>2026-07-01: 0 contributions</title></circle>
+  <circle cx="865.4" cy="190.4" r="7.4" class="well"><title>2026-07-02: 0 contributions</title></circle>
+  <circle cx="865.4" cy="210.0" r="7.4" class="well"><title>2026-07-03: 0 contributions</title></circle>
+  <circle cx="865.4" cy="229.6" r="7.4" class="well"><title>2026-07-04: 0 contributions</title></circle>
+  <circle cx="885.0" cy="112.0" r="7.4" class="well"><title>2026-07-05: 0 contributions</title></circle>
+  <text x="877.6" y="259.6" class="mo">Jul</text>
+  <circle cx="885.0" cy="131.6" r="7.4" class="well"><title>2026-07-06: 0 contributions</title></circle>
+  <circle cx="885.0" cy="151.2" r="7.4" class="well"><title>2026-07-07: 0 contributions</title></circle>
+  <circle cx="885.0" cy="170.8" r="7.4" class="well"><title>2026-07-08: 0 contributions</title></circle>
+  <circle cx="885.0" cy="190.4" r="7.4" class="well"><title>2026-07-09: 0 contributions</title></circle>
+  <circle cx="885.0" cy="210.0" r="7.4" class="well"><title>2026-07-10: 0 contributions</title></circle>
+  <circle cx="885.0" cy="229.6" r="7.4" class="well"><title>2026-07-11: 0 contributions</title></circle>
+  <circle cx="904.6" cy="112.0" r="7.4" class="well"><title>2026-07-12: 0 contributions</title></circle>
+  <circle cx="904.6" cy="131.6" r="7.4" class="well"><title>2026-07-13: 0 contributions</title></circle>
+  <circle cx="904.6" cy="151.2" r="7.4" class="well"><title>2026-07-14: 0 contributions</title></circle>
+  <circle cx="904.6" cy="170.8" r="7.4" class="well"><title>2026-07-15: 0 contributions</title></circle>
+  <circle cx="904.6" cy="190.4" r="7.4" class="well"><title>2026-07-16: 0 contributions</title></circle>
+  <circle cx="904.6" cy="210.0" r="7.4" class="well"><title>2026-07-17: 0 contributions</title></circle>
+  <circle cx="904.6" cy="229.6" r="7.4" class="well"><title>2026-07-18: 0 contributions</title></circle>
+  <circle cx="924.2" cy="112.0" r="7.4" class="well"><title>2026-07-19: 0 contributions</title></circle>
+  <circle cx="924.2" cy="131.6" r="7.4" class="well"><title>2026-07-20: 0 contributions</title></circle>
+  <circle cx="924.2" cy="151.2" r="7.4" class="well"><title>2026-07-21: 0 contributions</title></circle>
+  <circle cx="924.2" cy="170.8" r="7.4" class="well"><title>2026-07-22: 0 contributions</title></circle>
+  <circle cx="924.2" cy="190.4" r="7.4" class="well"><title>2026-07-23: 0 contributions</title></circle>
+  <circle cx="924.2" cy="210.0" r="7.4" class="well"><title>2026-07-24: 0 contributions</title></circle>
+  <circle cx="924.2" cy="229.6" r="7.4" class="well"><title>2026-07-25: 0 contributions</title></circle>
+  <circle cx="943.8" cy="112.0" r="7.4" class="well"><title>2026-07-26: 0 contributions</title></circle>
+  <circle cx="943.8" cy="131.6" r="7.4" class="well"><title>2026-07-27: 0 contributions</title></circle>
+  <circle cx="943.8" cy="151.2" r="7.4" class="well"><title>2026-07-28: 0 contributions</title></circle>
+  <circle cx="943.8" cy="170.8" r="7.4" class="well"><title>2026-07-29: 0 contributions</title></circle>
+  <circle cx="943.8" cy="190.4" r="7.4" class="well"><title>2026-07-30: 0 contributions</title></circle>
+  <circle cx="943.8" cy="210.0" r="7.4" class="well"><title>2026-07-31: 0 contributions</title></circle>
+  <circle cx="943.8" cy="229.6" r="7.4" class="well"><title>2026-08-01: 0 contributions</title></circle>
+  <circle cx="963.4" cy="112.0" r="7.4" class="well"><title>2026-08-02: 0 contributions</title></circle>
+  <text x="956.0" y="259.6" class="mo">Aug</text>
+  <circle cx="963.4" cy="131.6" r="7.4" class="well"><title>2026-08-03: 0 contributions</title></circle>
+  <circle cx="963.4" cy="151.2" r="7.4" class="well"><title>2026-08-04: 0 contributions</title></circle>
+  <circle cx="963.4" cy="170.8" r="7.4" class="well"><title>2026-08-05: 0 contributions</title></circle>
+  <circle cx="963.4" cy="190.4" r="7.4" class="well"><title>2026-08-06: 0 contributions</title></circle>
+  <circle cx="963.4" cy="210.0" r="7.4" class="well"><title>2026-08-07: 0 contributions</title></circle>
+  <circle cx="963.4" cy="229.6" r="7.4" class="well"><title>2026-08-08: 0 contributions</title></circle>
+  <circle cx="983.0" cy="112.0" r="7.4" class="well"><title>2026-08-09: 0 contributions</title></circle>
+  <circle cx="983.0" cy="131.6" r="7.4" class="well"/>
+  <circle cx="983.0" cy="131.6" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.78s"><title>2026-08-10: 25 contributions</title></circle>
+  <circle cx="983.0" cy="151.2" r="7.4" class="well"/>
+  <circle cx="983.0" cy="151.2" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.78s"><title>2026-08-11: 19 contributions</title></circle>
+  <circle cx="983.0" cy="170.8" r="7.4" class="well"/>
+  <circle cx="983.0" cy="170.8" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.78s"><title>2026-08-12: 8 contributions</title></circle>
+  <circle cx="983.0" cy="190.4" r="7.4" class="well"/>
+  <circle cx="983.0" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.78s"><title>2026-08-13: 7 contributions</title></circle>
+  <circle cx="983.0" cy="210.0" r="7.4" class="well"><title>2026-08-14: 0 contributions</title></circle>
+  <circle cx="983.0" cy="229.6" r="7.4" class="well"/>
+  <circle cx="983.0" cy="229.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.78s"><title>2026-08-15: 45 contributions</title></circle>
+  <circle cx="1002.6" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="112.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.81s"><title>2026-08-16: 22 contributions</title></circle>
+  <circle cx="1002.6" cy="131.6" r="7.4" class="well"><title>2026-08-17: 0 contributions</title></circle>
+  <circle cx="1002.6" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="151.2" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.81s"><title>2026-08-18: 8 contributions</title></circle>
+  <circle cx="1002.6" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="170.8" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.81s"><title>2026-08-19: 28 contributions</title></circle>
+  <circle cx="1002.6" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="190.4" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.81s"><title>2026-08-20: 16 contributions</title></circle>
+  <circle cx="1002.6" cy="210.0" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="210.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.81s"><title>2026-08-21: 19 contributions</title></circle>
+  <circle cx="1002.6" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1002.6" cy="229.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.81s"><title>2026-08-22: 5 contributions</title></circle>
+  <circle cx="1022.2" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="112.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.85s"><title>2026-08-23: 43 contributions</title></circle>
+  <circle cx="1022.2" cy="131.6" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="131.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.85s"><title>2026-08-24: 3 contributions</title></circle>
+  <circle cx="1022.2" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="151.2" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.85s"><title>2026-08-25: 63 contributions</title></circle>
+  <circle cx="1022.2" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="170.8" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.85s"><title>2026-08-26: 60 contributions</title></circle>
+  <circle cx="1022.2" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="190.4" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.85s"><title>2026-08-27: 104 contributions</title></circle>
+  <circle cx="1022.2" cy="210.0" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="210.0" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.85s"><title>2026-08-28: 89 contributions</title></circle>
+  <circle cx="1022.2" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1022.2" cy="229.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.85s"><title>2026-08-29: 48 contributions</title></circle>
+  <circle cx="1041.8" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1041.8" cy="112.0" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.88s"><title>2026-08-30: 50 contributions</title></circle>
+  <circle cx="1041.8" cy="131.6" r="7.4" class="well"/>
+  <circle cx="1041.8" cy="131.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.88s"><title>2026-08-31: 49 contributions</title></circle>
+  <circle cx="1041.8" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1041.8" cy="151.2" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.88s"><title>2026-09-01: 25 contributions</title></circle>
+  <circle cx="1041.8" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1041.8" cy="170.8" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.88s"><title>2026-09-02: 7 contributions</title></circle>
+  <circle cx="1041.8" cy="190.4" r="7.4" class="well"><title>2026-09-03: 0 contributions</title></circle>
+  <circle cx="1041.8" cy="210.0" r="7.4" class="well"><title>2026-09-04: 0 contributions</title></circle>
+  <circle cx="1041.8" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1041.8" cy="229.6" r="7.4" fill="#12403d" class="hit" style="animation-delay:1.88s"><title>2026-09-05: 4 contributions</title></circle>
+  <circle cx="1061.4" cy="112.0" r="7.4" class="well"><title>2026-09-06: 0 contributions</title></circle>
+  <text x="1054.0" y="259.6" class="mo">Sep</text>
+  <circle cx="1061.4" cy="131.6" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="131.6" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.92s"><title>2026-09-07: 36 contributions</title></circle>
+  <circle cx="1061.4" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="151.2" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.92s"><title>2026-09-08: 45 contributions</title></circle>
+  <circle cx="1061.4" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="170.8" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.92s"><title>2026-09-09: 32 contributions</title></circle>
+  <circle cx="1061.4" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="190.4" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.92s"><title>2026-09-10: 12 contributions</title></circle>
+  <circle cx="1061.4" cy="210.0" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="210.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.92s"><title>2026-09-11: 40 contributions</title></circle>
+  <circle cx="1061.4" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1061.4" cy="229.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.92s"><title>2026-09-12: 54 contributions</title></circle>
+  <circle cx="1081.0" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="112.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.95s"><title>2026-09-13: 39 contributions</title></circle>
+  <circle cx="1081.0" cy="131.6" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="131.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.95s"><title>2026-09-14: 72 contributions</title></circle>
+  <circle cx="1081.0" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="151.2" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.95s"><title>2026-09-15: 82 contributions</title></circle>
+  <circle cx="1081.0" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="170.8" r="7.4" fill="#1c6b65" class="hit" style="animation-delay:1.95s"><title>2026-09-16: 12 contributions</title></circle>
+  <circle cx="1081.0" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="190.4" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.95s"><title>2026-09-17: 69 contributions</title></circle>
+  <circle cx="1081.0" cy="210.0" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="210.0" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.95s"><title>2026-09-18: 104 contributions</title></circle>
+  <circle cx="1081.0" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1081.0" cy="229.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.95s"><title>2026-09-19: 88 contributions</title></circle>
+  <circle cx="1100.6" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="112.0" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.99s"><title>2026-09-20: 18 contributions</title></circle>
+  <circle cx="1100.6" cy="131.6" r="7.4" class="well"><title>2026-09-21: 0 contributions</title></circle>
+  <circle cx="1100.6" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="151.2" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.99s"><title>2026-09-22: 60 contributions</title></circle>
+  <circle cx="1100.6" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="170.8" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.99s"><title>2026-09-23: 91 contributions</title></circle>
+  <circle cx="1100.6" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="190.4" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:1.99s"><title>2026-09-24: 39 contributions</title></circle>
+  <circle cx="1100.6" cy="210.0" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="210.0" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.99s"><title>2026-09-25: 95 contributions</title></circle>
+  <circle cx="1100.6" cy="229.6" r="7.4" class="well"/>
+  <circle cx="1100.6" cy="229.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:1.99s"><title>2026-09-26: 59 contributions</title></circle>
+  <circle cx="1120.2" cy="112.0" r="7.4" class="well"/>
+  <circle cx="1120.2" cy="112.0" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:2.02s"><title>2026-09-27: 79 contributions</title></circle>
+  <circle cx="1120.2" cy="131.6" r="7.4" class="well"/>
+  <circle cx="1120.2" cy="131.6" r="7.4" fill="#4FD1C5" class="hit" filter="url(#glow)" style="animation-delay:2.02s"><title>2026-09-28: 44 contributions</title></circle>
+  <circle cx="1120.2" cy="151.2" r="7.4" class="well"/>
+  <circle cx="1120.2" cy="151.2" r="7.4" fill="#12403d" class="hit" style="animation-delay:2.02s"><title>2026-09-29: 5 contributions</title></circle>
+  <circle cx="1120.2" cy="170.8" r="7.4" class="well"/>
+  <circle cx="1120.2" cy="170.8" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:2.02s"><title>2026-09-30: 23 contributions</title></circle>
+  <circle cx="1120.2" cy="190.4" r="7.4" class="well"/>
+  <circle cx="1120.2" cy="190.4" r="7.4" fill="#2a9f95" class="hit" style="animation-delay:2.02s"><title>2026-10-01: 38 contributions</title></circle>
+  <rect x="61" y="100" width="40" height="142" class="scan"/>
+  <text x="57" y="310.6" class="sub">signal quartiles over active days · data: GitHub GraphQL</text>
+  <text x="912.2" y="310.6" class="sub">none</text><circle cx="982.2" cy="305.6" r="7.4" class="well"/><circle cx="1006.2" cy="305.6" r="7.4" fill="#12403d"/><circle cx="1030.2" cy="305.6" r="7.4" fill="#1c6b65"/><circle cx="1054.2" cy="305.6" r="7.4" fill="#2a9f95"/><circle cx="1078.2" cy="305.6" r="7.4" fill="#4FD1C5"/><text x="1094.2" y="310.6" class="sub">high</text>
+</svg>
