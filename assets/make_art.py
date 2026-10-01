@@ -237,17 +237,6 @@ def glyphs():
 
 
 SKILLICONS = "https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7"
-BADGES = [
-    "Claude-161b22?style=flat-square&logo=claude&logoColor=D97757",
-    "RDKit-161b22?style=flat-square",
-    "ChEMBL-161b22?style=flat-square",
-    "PubChem-161b22?style=flat-square",
-    "PyG-161b22?style=flat-square&logo=pyg&logoColor=4FD1C5",
-    "Hugging_Face-161b22?style=flat-square&logo=huggingface&logoColor=4FD1C5",
-    "PaperQA2-161b22?style=flat-square",
-    "GPT_·_vLLM-161b22?style=flat-square",
-    "Jupyter-161b22?style=flat-square&logo=jupyter&logoColor=4FD1C5",
-]
 
 
 def get(url):
@@ -257,33 +246,18 @@ def get(url):
 
 
 def toolbox():
-    """Icons and badges vendored into one SVG: one request instead of eleven third-party ones."""
+    """Skill icons vendored into one SVG, with the Claude tile first: one request instead of third-party ones."""
     icon_pitch = 300 / 256 * 48  # skillicons spacing
     icons = get(SKILLICONS).strip()
     icons_w = float(re.search(r'width="([\d.]+)"', icons).group(1))
     claude = open("assets/claude-tile.svg").read()
-    row1_w = icon_pitch + icons_w
-    badges = []
-    for b in BADGES:
-        svg = get("https://img.shields.io/badge/" + urllib.request.quote(b, safe="?=&-_.")).strip()
-        badges.append((float(re.search(r'width="([\d.]+)"', svg).group(1)), svg))
-    gap = 6
-    row2_w = sum(w for w, _ in badges) + gap * (len(badges) - 1)
-    tw = max(row1_w, row2_w)
-    ids = re.findall(r'id="([^"]+)"', icons + "".join(svg for _, svg in badges))
-    assert len(ids) == len(set(ids)), "nested SVGs share ids"
+    tw = icon_pitch + icons_w
 
-    def nest(svg, x, y):
-        return re.sub(r"^\s*<svg", f'<svg x="{x:.2f}" y="{y}"', svg, count=1)
+    def nest(svg, x):
+        return re.sub(r"^\s*<svg", f'<svg x="{x:.2f}" y="0"', svg, count=1)
 
-    x1 = (tw - row1_w) / 2
-    parts = [nest(claude, x1, 0), nest(icons, x1 + icon_pitch, 0)]
-    x = (tw - row2_w) / 2
-    for w, svg in badges:
-        parts.append(nest(svg, x, 62))
-        x += w + gap
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {tw:.0f} 82" width="{tw:.0f}" height="82" role="img" aria-label="Toolbox: Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git, RDKit, ChEMBL, PubChem, PyG, Hugging Face, PaperQA2, GPT, vLLM, Jupyter">
-{"".join(parts)}
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {tw:.0f} 48" width="{tw:.0f}" height="48" role="img" aria-label="Toolbox: Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git">
+{nest(claude, 0)}{nest(icons, icon_pitch)}
 </svg>
 '''
 
