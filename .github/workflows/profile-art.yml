@@ -29,17 +29,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      # official generator, run here because the hosted instance is disabled
-      - uses: ryo-ma/github-profile-trophy@e3c89df995e92e67cdd4b2acaab9d974583dc1f7
-        with:
-          username: ${{ github.repository_owner }}
-          output_path: assets/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-          theme: darkhub
+      - name: Lab report card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 assets/lab_report.py ${{ github.repository_owner }} assets/report.svg
 
       - name: Commit
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add dist profile-3d-contrib assets/trophy.svg
+          git add dist profile-3d-contrib assets/report.svg
           git commit -m "chore: refresh profile art" && git push || echo "no changes"

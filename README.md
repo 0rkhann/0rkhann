@@ -36,32 +36,38 @@ orkhan = {
 
 <img src="./assets/divider.svg" width="100%"/>
 
+### `$ chemlit ask`
+
+<p align="center">
+  <img src="./assets/agent.svg" width="100%" alt="chemlit agent pipeline replay"/>
+</p>
+
+<img src="./assets/divider.svg" width="100%"/>
+
 ### `$ pip list --toolbox`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git,vscode&theme=dark&perline=8"/>
+  <img src="./assets/claude-tile.svg" height="48" alt="Claude"/>
+  <img src="https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7" height="48"/>
 </p>
 <p align="center">
+  <img src="https://img.shields.io/badge/Claude-161b22?style=flat-square&logo=claude&logoColor=D97757"/>
   <img src="https://img.shields.io/badge/RDKit-161b22?style=flat-square"/>
   <img src="https://img.shields.io/badge/ChEMBL-161b22?style=flat-square"/>
   <img src="https://img.shields.io/badge/PubChem-161b22?style=flat-square"/>
   <img src="https://img.shields.io/badge/PyG-161b22?style=flat-square&logo=pyg&logoColor=4FD1C5"/>
   <img src="https://img.shields.io/badge/Hugging_Face-161b22?style=flat-square&logo=huggingface&logoColor=4FD1C5"/>
   <img src="https://img.shields.io/badge/PaperQA2-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Claude_·_GPT_·_vLLM-161b22?style=flat-square&logo=anthropic&logoColor=4FD1C5"/>
+  <img src="https://img.shields.io/badge/GPT_·_vLLM-161b22?style=flat-square"/>
   <img src="https://img.shields.io/badge/Jupyter-161b22?style=flat-square&logo=jupyter&logoColor=4FD1C5"/>
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>
 
-### `$ git log --stats`
+### `$ analyse --sample 0rkhann`
 
 <p align="center">
-  <img src="./assets/trophy.svg" width="100%" alt="GitHub trophies"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=0rkhann&background=0d1117&border=21262d&border_radius=12&ring=4FD1C5&fire=4FD1C5&currStreakLabel=4FD1C5&sideLabels=c9d1d9&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3&stroke=21262d" alt="contribution streak"/>
+  <img src="./assets/report.svg" width="100%" alt="GitHub activity as an analytical report"/>
 </p>
 
 <p align="center">
@@ -77,4 +83,4 @@ orkhan = {
 
 <img src="./assets/divider.svg" width="100%"/>
 
-<p align="center"><sub>Hero molecule is caffeine, drawn from RDKit 2D coordinates by <a href="./assets/make_art.py">assets/make_art.py</a>.</sub></p>
+<p align="center"><sub>Hero: caffeine generated token by token from its SMILES, laid out with RDKit coordinates by <a href="./assets/make_art.py">assets/make_art.py</a>.</sub></p>
