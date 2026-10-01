@@ -1,4 +1,4 @@
-"""Generate the static SVGs for the profile README: hero, divider and the vendored toolbox.
+"""Generate the static SVGs for the profile README: hero, divider, periodic-table toolbox and project glyphs.
 
 Run: uv run --with rdkit python assets/make_art.py
 """
@@ -6,7 +6,7 @@ import math
 import os
 import random
 import re
-import urllib.request
+from xml.sax.saxutils import escape
 
 from rdkit import Chem
 from rdkit.Chem import rdDepictor
@@ -236,28 +236,59 @@ def glyphs():
     return {"chemlit": tile(chemlit), "microkatc": tile(microkatc), "bo": tile(bo), "neptune": tile(neptune), "colinn": tile(colinn)}
 
 
-SKILLICONS = "https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7"
-
-
-def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "profile-art"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode()
+# periodic-table toolbox: (symbol, name), grouped into families that set the tile colour
+FAMILIES = [
+    ("Machine learning", "#7aa2ff", [("Py", "Python"), ("Pt", "PyTorch"), ("Sk", "scikit-learn"), ("Hf", "Hugging Face")]),
+    ("Chemistry", TEAL, [("Rd", "RDKit"), ("Bo", "Bayesian opt.")]),
+    ("AI & agents", "#ff9e64", [("Lm", "LLMs"), ("Ag", "AI agents"), ("Cl", "Claude")]),
+    ("Infrastructure", "#e3b341", [("Lx", "Linux"), ("Dk", "Docker"), ("Gt", "Git"), ("Aw", "AWS")]),
+]
+ROWS = [[0, 1], [2, 3]]  # families per row of the table
 
 
 def toolbox():
-    """Skill icons vendored into one SVG, with the Claude tile first: one request instead of third-party ones."""
-    icon_pitch = 300 / 256 * 48  # skillicons spacing
-    icons = get(SKILLICONS).strip()
-    icons_w = float(re.search(r'width="([\d.]+)"', icons).group(1))
-    claude = open("assets/claude-tile.svg").read()
-    tw = icon_pitch + icons_w
-
-    def nest(svg, x):
-        return re.sub(r"^\s*<svg", f'<svg x="{x:.2f}" y="0"', svg, count=1)
-
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {tw:.0f} 48" width="{tw:.0f}" height="48" role="img" aria-label="Toolbox: Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git">
-{nest(claude, 0)}{nest(icons, icon_pitch)}
+    """Tools as periodic-table element tiles, one colour per family."""
+    tw, th, gap, fam_gap = 112, 124, 10, 26
+    widths = [sum(len(FAMILIES[f][2]) * (tw + gap) - gap for f in row) + fam_gap * (len(row) - 1) for row in ROWS]
+    width = max(widths)
+    out, z, k = [], 0, 0
+    for r, row in enumerate(ROWS):
+        x = (width - widths[r]) / 2
+        y = r * (th + gap)
+        for f in row:
+            _, color, tools = FAMILIES[f]
+            for sym, name in tools:
+                z += 1
+                out.append(
+                    f'<g class="el" style="animation-delay:{k * .06:.2f}s">'
+                    f'<rect x="{x:.0f}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
+                    f'<text x="{x + 12:.0f}" y="{y + 22}" class="z">{z}</text>'
+                    f'<text x="{x + tw / 2:.0f}" y="{y + 76}" class="sym" fill="{color}">{sym}</text>'
+                    f'<text x="{x + tw / 2:.0f}" y="{y + 106}" class="nm">{name}</text></g>'
+                )
+                x += tw + gap
+                k += 1
+            x += fam_gap - gap
+    ly = len(ROWS) * (th + gap) + 18
+    legend, lx = [], 0.0
+    for fam, color, _ in FAMILIES:
+        legend.append(f'<rect x="{lx:.0f}" y="{ly - 11}" width="12" height="12" rx="3" fill="{color}" fill-opacity=".35" stroke="{color}"/>'
+                      f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
+        lx += 20 + 8.6 * len(fam) + 28
+    shift = (width - (lx - 28)) / 2
+    h = ly + 12
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width:.0f} {h}" width="{width:.0f}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {escape(", ".join(n for _, _, t in FAMILIES for _, n in t))}">
+  <style>
+    .z {{ font:500 13px {MONO}; fill:{MUTED}; }}
+    .sym {{ font:700 46px {SANS}; text-anchor:middle; }}
+    .nm {{ font:500 14px {SANS}; fill:#c9d1d9; text-anchor:middle; }}
+    .lg {{ font:400 14px {MONO}; fill:{MUTED}; }}
+    .el {{ opacity:0; animation:in .5s ease-out forwards; }}
+    @keyframes in {{ from {{ opacity:0; transform:translateY(6px); }} to {{ opacity:1; transform:none; }} }}
+    @media (prefers-reduced-motion: reduce) {{ .el {{ animation:none; opacity:1; }} }}
+  </style>
+  {"".join(out)}
+  <g transform="translate({shift:.0f} 0)">{"".join(legend)}</g>
 </svg>
 '''
 
