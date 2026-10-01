@@ -13,8 +13,7 @@ orkhan = {
     "into":    ["LLM agents for chemistry", "de novo molecular design",
                 "chemical space analysis", "bayesian optimisation",
                 "microkinetic modelling"],
-    "contact": {"email":    "orkhan.abdullayev@etu.unistra.fr",
-                "linkedin": "https://www.linkedin.com/in/orkhanabdullayev2003/"},
+    "email":   "orkhan.abdullayev@etu.unistra.fr",
 }
 ```
 
