@@ -5,7 +5,6 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/orkhanabdullayev2003"><img src="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=4FD1C5"/></a>
   <a href="https://github.com/0rkhann/chemlit"><img src="https://img.shields.io/badge/Building-chemlit-161b22?style=for-the-badge&labelColor=161b22&color=1f6f6a"/></a>
-  <img src="https://komarev.com/ghpvc/?username=0rkhann&style=for-the-badge&color=1f6f6a&label=visitors"/>
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>
@@ -62,7 +61,7 @@ orkhan = {
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=0rkhann&background=0d1117&border=21262d&border_radius=12&ring=4FD1C5&fire=4FD1C5&currStreakLabel=4FD1C5&sideLabels=c9d1d9&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3&stroke=21262d" width="100%" alt="contribution streak"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=0rkhann&background=0d1117&border=21262d&border_radius=12&ring=4FD1C5&fire=4FD1C5&currStreakLabel=4FD1C5&sideLabels=c9d1d9&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3&stroke=21262d" alt="contribution streak"/>
 </p>
 
 <p align="center">

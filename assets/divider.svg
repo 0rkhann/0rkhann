@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" width="1200" height="40" role="img" aria-label="divider">
   <style>
-    .base { fill:none; stroke:#21262d; stroke-width:2; }
+    .base { fill:none; stroke:#8b949e; stroke-opacity:.3; stroke-width:1.5; }
     .pulse { fill:none; stroke:#4FD1C5; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:90 2400; animation:run 6s linear infinite; }
     @keyframes run { from { stroke-dashoffset:90; } to { stroke-dashoffset:-2400; } }
     @media (prefers-reduced-motion: reduce) { .pulse { animation:none; } }
