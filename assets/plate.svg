@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 332" width="1200" height="332" role="img" aria-label="0rkhann's contributions from Sep 2025 – Oct 2026 drawn as an assay plate: 2,234 contributions, 87 active days.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 332" width="1200" height="332" role="img" aria-label="0rkhann's contributions from Sep 2025 – Oct 2026 drawn as an assay plate: 2,236 contributions, 87 active days.">
   <style>
-    .title { font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#e6edf3; letter-spacing:2px; }
-    .sub { font:400 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
-    .stat { font:400 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; fill:#8b949e; white-space:pre; }
-    .v { font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#4FD1C5; }
-    .cn { font:400 9px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
-    .rn { font:700 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
-    .mo { font:400 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
+    .title { font:700 19px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#e6edf3; letter-spacing:2px; }
+    .sub { font:400 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
+    .stat { font:400 16px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; fill:#8b949e; white-space:pre; }
+    .v { font:700 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#4FD1C5; }
+    .cn { font:400 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
+    .rn { font:700 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; text-anchor:middle; }
+    .mo { font:400 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#8b949e; }
     .well { fill:#1a222c; stroke:#2a3440; stroke-width:1; }
     .top { stroke:#a7f3ec; stroke-width:1.5; }
     .hit { opacity:0; animation:read .5s ease-out forwards; }
@@ -21,8 +21,8 @@
   </defs>
   <rect width="1200" height="332" rx="14" fill="#0d1117"/>
   <text x="57" y="34" class="title">PLATE READ · 0rkhann</text>
-  <text x="307" y="34" class="sub">Sep 2025 – Oct 2026 · 1 well = 1 day</text>
-  <text x="1142" y="34" class="stat" text-anchor="end"><tspan class="v">2,234</tspan> contributions   <tspan class="v">24%</tspan> hit rate   <tspan class="v">16d</tspan> longest run</text>
+  <text x="357" y="34" class="sub">Sep 2025 – Oct 2026 · 1 well = 1 day</text>
+  <text x="1142" y="34" class="stat" text-anchor="end"><tspan class="v">2,236</tspan> contributions   <tspan class="v">24%</tspan> hit rate   <tspan class="v">16d</tspan> longest run</text>
   <path d="M75,68 H1130.2 a12,12 0 0 1 12,12 V261.6 a12,12 0 0 1 -12,12 H69 a12,12 0 0 1 -12,-12 V86 Z" fill="#111820" stroke="#2a3440" stroke-width="1.5"/>
   <rect x="91.2" y="102.2" width="1038.8" height="137.2" fill="url(#wells)"/>
   <text x="101.0" y="92" class="cn">1</text>

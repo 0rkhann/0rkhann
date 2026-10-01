@@ -120,13 +120,13 @@ def render(login, cal):
     body = "\n  ".join(out)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h:.0f}" width="{W}" height="{h:.0f}" role="img" aria-label="{escape(login)}'s contributions from {span} drawn as an assay plate: {cal["totalContributions"]:,} contributions, {active} active days.">
   <style>
-    .title {{ font:700 15px {MONO}; fill:{TEXT}; letter-spacing:2px; }}
-    .sub {{ font:400 13px {MONO}; fill:{MUTED}; }}
-    .stat {{ font:400 14px {SANS}; fill:{MUTED}; white-space:pre; }}
-    .v {{ font:700 15px {MONO}; fill:{TEAL}; }}
-    .cn {{ font:400 9px {MONO}; fill:{MUTED}; text-anchor:middle; }}
-    .rn {{ font:700 12px {MONO}; fill:{MUTED}; text-anchor:middle; }}
-    .mo {{ font:400 11px {MONO}; fill:{MUTED}; }}
+    .title {{ font:700 19px {MONO}; fill:{TEXT}; letter-spacing:2px; }}
+    .sub {{ font:400 15px {MONO}; fill:{MUTED}; }}
+    .stat {{ font:400 16px {SANS}; fill:{MUTED}; white-space:pre; }}
+    .v {{ font:700 18px {MONO}; fill:{TEAL}; }}
+    .cn {{ font:400 10.5px {MONO}; fill:{MUTED}; text-anchor:middle; }}
+    .rn {{ font:700 14px {MONO}; fill:{MUTED}; text-anchor:middle; }}
+    .mo {{ font:400 14px {MONO}; fill:{MUTED}; }}
     .well {{ fill:{EMPTY}; stroke:{EDGE}; stroke-width:1; }}
     .top {{ stroke:#a7f3ec; stroke-width:1.5; }}
     .hit {{ opacity:0; animation:read .5s ease-out forwards; }}
@@ -141,7 +141,7 @@ def render(login, cal):
   </defs>
   <rect width="{W}" height="{h:.0f}" rx="14" fill="{BG}"/>
   <text x="{px0}" y="34" class="title">PLATE READ · {escape(login)}</text>
-  <text x="{px0 + 250}" y="34" class="sub">{span} · 1 well = 1 day</text>
+  <text x="{px0 + 300}" y="34" class="sub">{span} · 1 well = 1 day</text>
   <text x="{px1:.0f}" y="34" class="stat" text-anchor="end">{stats}</text>
   <path d="M{px0 + 18},{py0} H{px1 - 12} a12,12 0 0 1 12,12 V{py1 - 12} a12,12 0 0 1 -12,12 H{px0 + 12} a12,12 0 0 1 -12,-12 V{py0 + 18} Z" fill="{PLATE}" stroke="{EDGE}" stroke-width="1.5"/>
   <rect x="{X0 - PITCH / 2:.1f}" y="{Y0 - PITCH / 2:.1f}" width="{ncol * PITCH:.1f}" height="{7 * PITCH:.1f}" fill="url(#wells)"/>

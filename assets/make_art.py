@@ -128,9 +128,9 @@ def hero():
     .smi {{ font:500 17px {MONO}; fill:{TEXT}; }}
     .dot {{ fill:{DIM}; animation:drift ease-in-out infinite alternate; }}
     .name {{ font:700 54px {SANS}; fill:{TEXT}; }}
-    .role {{ font:500 22px {SANS}; fill:{TEAL}; letter-spacing:3px; }}
-    .meta {{ font:400 16px {MONO}; fill:{MUTED}; }}
-    .tag {{ font:400 18px {MONO}; fill:{TEXT}; opacity:0; animation:cycle 12s linear infinite; }}
+    .role {{ font:500 24px {SANS}; fill:{TEAL}; letter-spacing:3px; }}
+    .meta {{ font:400 18px {MONO}; fill:{MUTED}; }}
+    .tag {{ font:400 20px {MONO}; fill:{TEXT}; opacity:0; animation:cycle 12s linear infinite; }}
     .caret {{ fill:{TEAL}; animation:blink 1s steps(1) infinite; }}
     @keyframes gen {{ 0% {{ opacity:0; }} 2.5%, 74% {{ opacity:1; }} 78%, 100% {{ opacity:0; }} }}
     @keyframes draw {{ 0% {{ stroke-dashoffset:120; opacity:1; }} 3%, 74% {{ stroke-dashoffset:0; opacity:1; }} 78%, 100% {{ stroke-dashoffset:0; opacity:0; }} }}
