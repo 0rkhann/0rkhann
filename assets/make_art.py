@@ -230,7 +230,8 @@ def toolbox():
             f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
             + name_lines(x + tw / 2, y, name) + "</g>"
         )
-    ly = nrow * (th + gap) + 18
+    # legend sits midway between the last row and the README divider below the image
+    ly = nrow * (th + gap) + 30
     legend, lx = [], 0.0
     for key, fam in FAMILIES.items():
         color = FAM[key]
@@ -238,7 +239,7 @@ def toolbox():
                       f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
         lx += 20 + 9.8 * len(fam) + 30
     shift = (width - (lx - 30)) / 2
-    h = ly + 12
+    h = ly + 5
     names = escape(", ".join(e[3] for e in sorted(ELEMENTS)))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {names}">
   <style>
