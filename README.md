@@ -56,12 +56,4 @@ orkhan = {
 
 <img src="./assets/divider.svg" width="100%"/>
 
-### `$ plate-reader --all-years`
-
-<p align="center">
-  <img src="./assets/plate.svg" width="100%" alt="GitHub contributions since 2022 as a stack of assay plates, one plate per year, one well per day"/>
-</p>
-
-<img src="./assets/divider.svg" width="100%"/>
-
 <p align="center"><sub>Hero: caffeine generated token by token from its SMILES, laid out with RDKit coordinates by <a href="./assets/make_art.py">assets/make_art.py</a>.</sub></p>
