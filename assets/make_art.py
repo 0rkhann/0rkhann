@@ -122,12 +122,41 @@ def space_dots(n, seed):
     return "\n    ".join(dots)
 
 
+def typed_taglines(lines, x, y, cw=12.0, type_s=.065, hold_s=2.2, erase_s=.025, gap_s=.45):
+    """Typewriter: a static prompt, then each line types out, holds, backspaces, and hands over to the next.
+
+    A cover rect in the card colour slides right in steps(n) to reveal one character per step; textLength pins
+    every glyph to `cw` so the steps line up whatever monospace font the viewer has.
+    Returns (svg, css).
+    """
+    spans = [len(t) * type_s + hold_s + len(t) * erase_s + gap_s for t in lines]
+    period = sum(spans)
+    x0 = x + 2 * cw  # text starts after "> "
+    svg, css, start = [f'<text x="{x}" y="{y}" class="tag prompt">&gt;</text>'], [], 0.0
+    for i, (t, span) in enumerate(zip(lines, spans)):
+        n, L = len(t), len(t) * cw
+        pct = lambda sec: f"{100 * sec / period:.3f}%"
+        t_typed, t_held, t_gone = start + n * type_s, start + n * type_s + hold_s, start + span - gap_s
+        css.append(
+            f"@keyframes on{i} {{ 0% {{ opacity:{int(i == 0)}; }} {pct(max(start - .001, 0))} {{ opacity:{int(i == 0)}; }} "
+            f"{pct(start)}, {pct(t_gone)} {{ opacity:1; }} {pct(t_gone + .001)}, 100% {{ opacity:0; }} }}"
+            f"@keyframes ty{i} {{ 0%, {pct(start)} {{ transform:translateX(0); animation-timing-function:steps({n}, end); }} "
+            f"{pct(t_typed)}, {pct(t_held)} {{ transform:translateX({L:.0f}px); animation-timing-function:steps({n}, end); }} "
+            f"{pct(t_gone)}, 100% {{ transform:translateX(0); }} }}"
+            f".l{i} {{ animation:on{i} {period:.2f}s linear infinite; }} .l{i} .mv {{ animation:ty{i} {period:.2f}s linear infinite; }}"
+        )
+        svg.append(
+            f'<g class="l{i}" clip-path="url(#card)"><text x="{x0}" y="{y}" class="tag" textLength="{L:.0f}" lengthAdjust="spacingAndGlyphs">{escape(t)}</text>'
+            f'<g class="mv"><rect x="{x0 - 1}" y="{y - 22}" width="{L + 40:.0f}" height="30" fill="{BG}"/>'
+            f'<text x="{x0}" y="{y}" class="tag caret">▍</text></g></g>'
+        )
+        start += span
+    return "\n    ".join(svg), "\n    ".join(css)
+
+
 def hero():
     taglines = ["Teaching machines to read molecules", "LLM agents for chemistry", "De novo design: molecules that don't exist yet"]
-    tl = "\n    ".join(
-        f'<text x="560" y="232" class="tag" style="animation-delay:{4 * i}s">&gt; {t}<tspan class="caret">_</tspan></text>'
-        for i, t in enumerate(taglines)
-    )
+    tl, tl_css = typed_taglines(taglines, 560, 232)
     # each element shares one looping keyframe; its delay sets when it is "generated"
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and AI Engineering. Caffeine generated token by token from its SMILES.">
   <style>
@@ -140,15 +169,17 @@ def hero():
     .name {{ font:700 54px {SANS}; fill:{TEXT}; }}
     .role {{ font:500 24px {SANS}; fill:{TEAL}; letter-spacing:3px; }}
     .meta {{ font:400 18px {MONO}; fill:{MUTED}; }}
-    .tag {{ font:400 20px {MONO}; fill:{TEXT}; opacity:0; animation:cycle 12s linear infinite; }}
-    .caret {{ fill:{TEAL}; animation:blink 1s steps(1) infinite; }}
+    .tag {{ font:400 20px {MONO}; fill:{TEXT}; }}
+    .prompt, .caret {{ fill:{TEAL}; }}
+    .caret {{ animation:blink 1s steps(1) infinite; }}
+    {tl_css}
     @keyframes gen {{ 0% {{ opacity:0; }} 2.5%, 74% {{ opacity:1; }} 78%, 100% {{ opacity:0; }} }}
     @keyframes draw {{ 0% {{ stroke-dashoffset:120; opacity:1; }} 3%, 74% {{ stroke-dashoffset:0; opacity:1; }} 78%, 100% {{ stroke-dashoffset:0; opacity:0; }} }}
     @keyframes drift {{ from {{ transform:translate(0,0); opacity:.25; }} to {{ transform:translate(14px,-10px); opacity:.9; }} }}
-    @keyframes cycle {{ 0% {{ opacity:0; }} 3%, 30% {{ opacity:1; }} 33%, 100% {{ opacity:0; }} }}
     @keyframes blink {{ 50% {{ opacity:0; }} }}
-    @media (prefers-reduced-motion: reduce) {{ * {{ animation:none !important; }} .bond {{ stroke-dashoffset:0; }} .atom, .gen, .tag:first-of-type {{ opacity:1; }} }}
+    @media (prefers-reduced-motion: reduce) {{ * {{ animation:none !important; }} .bond {{ stroke-dashoffset:0; }} .atom, .gen, .l0 {{ opacity:1; }} .l1, .l2, .mv rect {{ display:none; }} }}
   </style>
+  <defs><clipPath id="card"><rect x="2" y="2" width="{W - 4}" height="{H - 4}" rx="16"/></clipPath></defs>
   <rect width="{W}" height="{H}" rx="18" fill="{BG}"/>
   <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none" stroke="{EDGE}"/>
   <g>
@@ -159,7 +190,7 @@ def hero():
   </g>
   <text x="560" y="118" class="name">Orkhan Abdullayev</text>
   <text x="562" y="158" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
-  <text x="562" y="190" class="meta">Strasbourg, FR  ·  SMILES in, insight out</text>
+  <text x="562" y="190" class="meta">Strasbourg, FR  ·  PhD @ Chemoinformatics Lab</text>
   <g>
     {tl}
   </g>
@@ -230,7 +261,8 @@ def toolbox():
             f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
             + name_lines(x + tw / 2, y, name) + "</g>"
         )
-    ly = nrow * (th + gap) + 18
+    # legend sits midway between the last row and the README divider below the image
+    ly = nrow * (th + gap) + 44
     legend, lx = [], 0.0
     for key, fam in FAMILIES.items():
         color = FAM[key]
@@ -238,7 +270,7 @@ def toolbox():
                       f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
         lx += 20 + 9.8 * len(fam) + 30
     shift = (width - (lx - 30)) / 2
-    h = ly + 12
+    h = ly + 5
     names = escape(", ".join(e[3] for e in sorted(ELEMENTS)))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img" aria-label="Toolbox as a periodic table: {names}">
   <style>
