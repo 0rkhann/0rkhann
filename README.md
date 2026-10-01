@@ -8,12 +8,13 @@
 
 ```python
 orkhan = {
-    "role":     "PhD student · Chemoinformatics Lab, Université de Strasbourg",
-    "field":    "chemoinformatics × machine learning",
-    "building": "LLM agents for chemistry",
-    "into":     ["de novo molecular design", "chemical space maps (GTM)",
-                 "Bayesian optimisation", "microkinetic modelling"],
-    "contact":  "linkedin.com/in/orkhanabdullayev2003",
+    "role":    "PhD student · Chemoinformatics Lab, Université de Strasbourg",
+    "field":   "chemoinformatics × machine learning",
+    "into":    ["LLM agents for chemistry", "de novo molecular design",
+                "chemical space maps (GTM)", "Bayesian optimisation",
+                "microkinetic modelling"],
+    "contact": ["orkhan.abdullayev@etu.unistra.fr",
+                "linkedin.com/in/orkhanabdullayev2003"],
 }
 ```
 
