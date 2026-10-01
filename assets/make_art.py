@@ -193,7 +193,7 @@ def hero():
   </g>
   <text x="560" y="118" class="name">Orkhan Abdullayev</text>
   <text x="562" y="158" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
-  <text x="562" y="190" class="meta">Strasbourg, FR  ·  PhD @ Chemoinformatics Lab</text>
+  <text x="562" y="190" class="meta">Strasbourg, FR  ·  PhD @ Lab de Chémoinformatique</text>
   <g>
     {tl}
   </g>
@@ -293,16 +293,16 @@ def toolbox():
 
 if __name__ == "__main__":
     # file names carry a content hash, so a changed image gets a new URL and no browser or CDN serves a stale copy
-    readme = open("README.md").read()
+    readme = open("README.md", encoding="utf-8").read()
     for old in glob.glob("assets/*-dark.*.svg") + glob.glob("assets/*-light.*.svg"):
         os.remove(old)
     for theme, palette in THEMES.items():
         globals().update(palette)
         for name, svg in [("hero", hero()), ("divider", divider()), ("toolbox", toolbox())]:
             fname = f"{name}-{theme}.{hashlib.sha1(svg.encode()).hexdigest()[:8]}.svg"
-            with open(f"assets/{fname}", "w") as f:
+            with open(f"assets/{fname}", "w", encoding="utf-8") as f:
                 f.write(svg)
             readme = re.sub(rf"assets/{name}-{theme}(\.[0-9a-f]{{8}})?\.svg", f"assets/{fname}", readme)
             print(f"wrote {fname}")
-    with open("README.md", "w") as f:
+    with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme)

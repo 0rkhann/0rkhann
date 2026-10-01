@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.fb71d393.svg"/>
-  <img src="./assets/hero-dark.32981807.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.d369d1e2.svg"/>
+  <img src="./assets/hero-dark.11aaf0d8.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
 </picture>
 </p>
 
@@ -14,7 +14,7 @@
 
 ```python
 orkhan = {
-    "role":    "PhD student · Chemoinformatics Lab, Université de Strasbourg",
+    "role":    "PhD student · Lab de Chémoinformatique, Université de Strasbourg",
     "field":   "chemoinformatics × machine learning",
     "into":    ["LLM agents for chemistry", "de novo molecular design",
                 "chemical space analysis", "bayesian optimisation",
