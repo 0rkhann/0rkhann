@@ -231,7 +231,7 @@ def toolbox():
             + name_lines(x + tw / 2, y, name) + "</g>"
         )
     # legend sits midway between the last row and the README divider below the image
-    ly = nrow * (th + gap) + 30
+    ly = nrow * (th + gap) + 44
     legend, lx = [], 0.0
     for key, fam in FAMILIES.items():
         color = FAM[key]
