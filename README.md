@@ -27,5 +27,3 @@ orkhan = {
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>
-
-<p align="center"><sub>Hero: caffeine generated token by token from its SMILES, laid out with RDKit coordinates by <a href="./assets/make_art.py">assets/make_art.py</a>.</sub></p>
