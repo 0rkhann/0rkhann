@@ -51,7 +51,7 @@ orkhan = {
 ### `$ pip list --toolbox`
 
 <p align="center">
-  <img src="./assets/toolbox.svg" alt="Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git, RDKit, ChEMBL, PubChem, PyG, Hugging Face, PaperQA2, GPT, vLLM, Jupyter"/>
+  <img src="./assets/toolbox.svg" alt="Toolbox as a periodic table: Python, PyTorch, scikit-learn, Hugging Face, RDKit, Bayesian optimisation, LLMs, AI agents, Claude, Linux, Docker, Git, AWS"/>
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>
