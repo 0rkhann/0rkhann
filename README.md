@@ -14,14 +14,10 @@ orkhan = {
                 "chemical space analysis", "bayesian optimisation",
                 "microkinetic modelling"],
     "contact": {"email":    "orkhan.abdullayev@etu.unistra.fr",
-                "linkedin": "in/orkhanabdullayev2003"},
+                "linkedin": "https://www.linkedin.com/in/orkhanabdullayev2003/"},
 }
 ```
 
-<p>
-  <a href="mailto:orkhan.abdullayev@etu.unistra.fr">✉ email</a> &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/orkhanabdullayev2003">in LinkedIn</a>
-</p>
 
 <img src="./assets/divider.svg" width="100%"/>
 
