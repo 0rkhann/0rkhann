@@ -15,10 +15,11 @@
 ```python
 orkhan = {
     "role":    "PhD student · Lab de Chémoinformatique, Université de Strasbourg",
-    "field":   "chemoinformatics × machine learning",
+    "now":     "chemlit, a literature agent that cites every claim",
     "into":    ["LLM agents for chemistry", "de novo molecular design",
                 "chemical space analysis", "bayesian optimisation",
                 "microkinetic modelling"],
+    "open_to": ["research collaborations", "internships"],
     "email":   "orkhan.abdullayev@etu.unistra.fr",
 }
 ```
