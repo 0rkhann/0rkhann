@@ -49,7 +49,7 @@ def tokens_with_atoms(smiles):
     return out
 
 
-def de_novo(cx, cy, scale, text_y):
+def de_novo(cx, cy, scale, text_y, cw=10.2):
     mol = Chem.MolFromSmiles(SMILES)
     Chem.Kekulize(mol, clearAromaticFlags=True)
     rdDepictor.SetPreferCoordGen(True)
@@ -66,7 +66,6 @@ def de_novo(cx, cy, scale, text_y):
 
     out = []
     # SMILES string typed out under the molecule, one token at a time
-    cw = 10.2
     x0 = cx - len(SMILES) * cw / 2
     out.append(f'<text x="{x0 - 14:.1f}" y="{text_y}" class="smi" style="fill:{TEAL}" text-anchor="end">▸</text>')
     col = 0
@@ -113,11 +112,11 @@ def de_novo(cx, cy, scale, text_y):
     return "\n    ".join(out)
 
 
-def space_dots(n, seed):
+def space_dots(n, seed, w=None, h=None):
     rnd = random.Random(seed)
     dots = []
     for _ in range(n):
-        x, y = rnd.uniform(0, W), rnd.uniform(0, H)
+        x, y = rnd.uniform(0, w or W), rnd.uniform(0, h or H)
         r = rnd.choice([1.2, 1.6, 2.2])
         dur = rnd.uniform(6, 14)
         delay = rnd.uniform(0, 6)
@@ -157,22 +156,32 @@ def typed_taglines(lines, x, y, cw=12.0, type_s=.065, hold_s=2.2, erase_s=.025, 
     return "\n    ".join(svg), "\n    ".join(css)
 
 
-def hero():
+# hero geometry: the wide card, and a stacked card for phone screens (molecule above, text below)
+DESKTOP = dict(w=W, h=H, dots=70, mol=(300, 140, 56, 292), smi=(17, 10.2), x=560, name=(118, 54), role=(158, 24, 3),
+               meta=(190, 18), tag=(232, 20, 12.0), anchor="start")
+MOBILE = dict(w=440, h=480, dots=40, mol=(220, 132, 44, 284), smi=(14, 8.4), x=18, name=(340, 38), role=(372, 15, 2),
+              meta=(400, 13), tag=(444, 14, 8.4), anchor="start")
+
+
+def hero(g=DESKTOP):
+    w, h = g["w"], g["h"]
+    x = g["x"]
+    tag_y, tag_px, tag_cw = g["tag"]
     taglines = ["Teaching machines to read molecules", "LLM agents for chemistry", "De novo design: molecules that don't exist yet"]
-    tl, tl_css = typed_taglines(taglines, 560, 232)
+    tl, tl_css = typed_taglines(taglines, x, tag_y, cw=tag_cw)
     # each element shares one looping keyframe; its delay sets when it is "generated"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and AI Engineering. Caffeine generated token by token from its SMILES.">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and AI Engineering. Caffeine generated token by token from its SMILES.">
   <style>
     .bond {{ fill:none; stroke:{TEAL}; stroke-width:3; stroke-linecap:round; stroke-dasharray:120; stroke-dashoffset:120; animation:draw {PERIOD}s ease-out infinite backwards; }}
     .thin {{ stroke-width:2; stroke-opacity:.7; }}
     .atom, .gen {{ opacity:0; animation:gen {PERIOD}s ease-out infinite backwards; }}
     .sym {{ font:700 15px {MONO}; text-anchor:middle; }}
-    .smi {{ font:500 17px {MONO}; fill:{TEXT}; }}
+    .smi {{ font:500 {g["smi"][0]}px {MONO}; fill:{TEXT}; }}
     .dot {{ fill:{DIM}; animation:drift ease-in-out infinite alternate; }}
-    .name {{ font:700 54px {SANS}; fill:{TEXT}; }}
-    .role {{ font:500 24px {SANS}; fill:{TEAL}; letter-spacing:3px; }}
-    .meta {{ font:400 18px {MONO}; fill:{MUTED}; }}
-    .tag {{ font:400 20px {MONO}; fill:{TEXT}; }}
+    .name {{ font:700 {g["name"][1]}px {SANS}; fill:{TEXT}; }}
+    .role {{ font:500 {g["role"][1]}px {SANS}; fill:{TEAL}; letter-spacing:{g["role"][2]}px; }}
+    .meta {{ font:400 {g["meta"][1]}px {MONO}; fill:{MUTED}; }}
+    .tag {{ font:400 {tag_px}px {MONO}; fill:{TEXT}; }}
     .prompt, .caret {{ fill:{TEAL}; }}
     .caret {{ animation:blink 1s steps(1) infinite; }}
     {tl_css}
@@ -182,18 +191,18 @@ def hero():
     @keyframes blink {{ 50% {{ opacity:0; }} }}
     @media (prefers-reduced-motion: reduce) {{ * {{ animation:none !important; }} .bond {{ stroke-dashoffset:0; }} .atom, .gen, .l0 {{ opacity:1; }} .l1, .l2, .mv rect {{ display:none; }} }}
   </style>
-  <defs><clipPath id="card"><rect x="2" y="2" width="{W - 4}" height="{H - 4}" rx="16"/></clipPath></defs>
-  <rect width="{W}" height="{H}" rx="18" fill="{BG}"/>
-  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none" stroke="{EDGE}"/>
+  <defs><clipPath id="card"><rect x="2" y="2" width="{w - 4}" height="{h - 4}" rx="16"/></clipPath></defs>
+  <rect width="{w}" height="{h}" rx="18" fill="{BG}"/>
+  <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="17" fill="none" stroke="{EDGE}"/>
   <g>
-    {space_dots(70, 7)}
+    {space_dots(g["dots"], 7, w, h)}
   </g>
   <g>
-    {de_novo(300, 140, 56, 292)}
+    {de_novo(*g["mol"], cw=g["smi"][1])}
   </g>
-  <text x="560" y="118" class="name">Orkhan Abdullayev</text>
-  <text x="562" y="158" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
-  <text x="562" y="190" class="meta">Strasbourg, FR  ·  PhD @ Lab de Chémoinformatique</text>
+  <text x="{x}" y="{g["name"][0]}" class="name">Orkhan Abdullayev</text>
+  <text x="{x + 2}" y="{g["role"][0]}" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
+  <text x="{x + 2}" y="{g["meta"][0]}" class="meta">Strasbourg, FR  ·  PhD @ Lab de Chémoinformatique</text>
   <g>
     {tl}
   </g>
@@ -298,7 +307,7 @@ if __name__ == "__main__":
         os.remove(old)
     for theme, palette in THEMES.items():
         globals().update(palette)
-        for name, svg in [("hero", hero()), ("divider", divider()), ("toolbox", toolbox())]:
+        for name, svg in [("hero", hero()), ("hero-mobile", hero(MOBILE)), ("divider", divider()), ("toolbox", toolbox())]:
             fname = f"{name}-{theme}.{hashlib.sha1(svg.encode()).hexdigest()[:8]}.svg"
             with open(f"assets/{fname}", "w", encoding="utf-8") as f:
                 f.write(svg)
