@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [.github/workflows/profile-art.yml]
+    paths: [.github/workflows/profile-art.yml, README.md]
 
 permissions:
   contents: write
@@ -17,21 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/snake.svg?palette=github-light&color_snake=#0b7285
-            dist/snake-dark.svg?palette=github-dark&color_snake=#4FD1C5
-
-      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+      - name: Plate read of contributions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
+        run: python3 assets/plate.py ${{ github.repository_owner }} assets/plate.svg
 
       - name: Commit
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add dist profile-3d-contrib
+          git add assets/plate.svg
           git commit -m "chore: refresh profile art" && git push || echo "no changes"
