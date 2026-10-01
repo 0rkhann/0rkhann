@@ -15,7 +15,7 @@
 ```python
 orkhan = {
     "role":    "PhD student · Lab de Chémoinformatique, Université de Strasbourg",
-    "now":     "chemlit, a literature agent that cites every claim",
+    "now":     "chemlit, an AI research agent: literature → hypotheses → code → results",
     "into":    ["LLM agents for chemistry", "de novo molecular design",
                 "chemical space analysis", "bayesian optimisation",
                 "microkinetic modelling"],
