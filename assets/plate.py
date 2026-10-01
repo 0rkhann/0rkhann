@@ -80,7 +80,7 @@ def render(login, cal):
     for i, letter in enumerate("ABCDEFG"):
         out.append(f'<text x="{X0 - 26}" y="{Y0 + i * PITCH + 4:.1f}" class="rn">{letter}</text>')
 
-    # wells; the scan reveals column j at j * STEP seconds
+    # hit wells only; empty wells come from one pattern-filled rect. The scan reveals column j at j * step seconds
     step = 0.035
     seen_month = None
     for j, w in enumerate(weeks):
@@ -89,17 +89,11 @@ def render(login, cal):
             y = Y0 + d["weekday"] * PITCH
             c = d["contributionCount"]
             lv = level(c, cuts)
-            tip = f'{d["date"]}: {c} contribution{"s" * (c != 1)}'
             if lv:
-                glow = ' filter="url(#glow)"' if lv == 4 else ""
-                # empty well underneath, so the plate has no holes before the scan reaches a hit
-                out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{R}" class="well"/>')
                 out.append(
-                    f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{R}" fill="{RAMP[lv - 1]}" class="hit"{glow} '
-                    f'style="animation-delay:{j * step + .2:.2f}s"><title>{tip}</title></circle>'
+                    f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{R}" fill="{RAMP[lv - 1]}" class="hit{" top" * (lv == 4)}" '
+                    f'style="animation-delay:{j * step + .2:.2f}s"/>'
                 )
-            else:
-                out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{R}" class="well"><title>{tip}</title></circle>')
             month = d["date"][:7]
             if d["weekday"] == 0 and month != seen_month and int(d["date"][8:]) <= 7:
                 label = dt.date.fromisoformat(d["date"]).strftime("%b")
@@ -134,6 +128,7 @@ def render(login, cal):
     .rn {{ font:700 12px {MONO}; fill:{MUTED}; text-anchor:middle; }}
     .mo {{ font:400 11px {MONO}; fill:{MUTED}; }}
     .well {{ fill:{EMPTY}; stroke:{EDGE}; stroke-width:1; }}
+    .top {{ stroke:#a7f3ec; stroke-width:1.5; }}
     .hit {{ opacity:0; animation:read .5s ease-out forwards; }}
     .scan {{ fill:url(#beam); animation:sweep {ncol * step + .4:.2f}s linear .2s forwards; opacity:0; }}
     @keyframes read {{ from {{ opacity:0; }} to {{ opacity:1; }} }}
@@ -141,7 +136,7 @@ def render(login, cal):
     @media (prefers-reduced-motion: reduce) {{ .hit {{ animation:none; opacity:1; }} .scan {{ display:none; }} }}
   </style>
   <defs>
-    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="wells" x="{X0 - PITCH / 2:.1f}" y="{Y0 - PITCH / 2:.1f}" width="{PITCH}" height="{PITCH}" patternUnits="userSpaceOnUse"><circle cx="{PITCH / 2}" cy="{PITCH / 2}" r="{R}" class="well"/></pattern>
     <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="{TEAL}" stop-opacity="0"/><stop offset=".85" stop-color="{TEAL}" stop-opacity=".28"/><stop offset="1" stop-color="{TEAL}" stop-opacity=".9"/></linearGradient>
   </defs>
   <rect width="{W}" height="{h:.0f}" rx="14" fill="{BG}"/>
@@ -149,6 +144,7 @@ def render(login, cal):
   <text x="{px0 + 250}" y="34" class="sub">{span} · 1 well = 1 day</text>
   <text x="{px1:.0f}" y="34" class="stat" text-anchor="end">{stats}</text>
   <path d="M{px0 + 18},{py0} H{px1 - 12} a12,12 0 0 1 12,12 V{py1 - 12} a12,12 0 0 1 -12,12 H{px0 + 12} a12,12 0 0 1 -12,-12 V{py0 + 18} Z" fill="{PLATE}" stroke="{EDGE}" stroke-width="1.5"/>
+  <rect x="{X0 - PITCH / 2:.1f}" y="{Y0 - PITCH / 2:.1f}" width="{ncol * PITCH:.1f}" height="{7 * PITCH:.1f}" fill="url(#wells)"/>
   {body}
   <rect x="{X0 - 40}" y="{Y0 - 12}" width="40" height="{6 * PITCH + 24:.0f}" class="scan"/>
   <text x="{px0}" y="{py1 + 37}" class="sub">signal quartiles over active days · data: GitHub GraphQL</text>

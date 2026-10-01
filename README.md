@@ -34,19 +34,7 @@ orkhan = {
 ### `$ pip list --toolbox`
 
 <p align="center">
-  <img src="./assets/claude-tile.svg" height="48" alt="Claude"/>
-  <img src="https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7" height="48"/>
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Claude-161b22?style=flat-square&logo=claude&logoColor=D97757"/>
-  <img src="https://img.shields.io/badge/RDKit-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/ChEMBL-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/PubChem-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/PyG-161b22?style=flat-square&logo=pyg&logoColor=4FD1C5"/>
-  <img src="https://img.shields.io/badge/Hugging_Face-161b22?style=flat-square&logo=huggingface&logoColor=4FD1C5"/>
-  <img src="https://img.shields.io/badge/PaperQA2-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/GPT_·_vLLM-161b22?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Jupyter-161b22?style=flat-square&logo=jupyter&logoColor=4FD1C5"/>
+  <img src="./assets/toolbox.svg" alt="Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git, RDKit, ChEMBL, PubChem, PyG, Hugging Face, PaperQA2, GPT, vLLM, Jupyter"/>
 </p>
 
 <img src="./assets/divider.svg" width="100%"/>

@@ -1,9 +1,10 @@
-"""Generate the static animated SVGs for the profile README: hero and divider.
+"""Generate the static SVGs for the profile README: hero, divider and the vendored toolbox.
 
 Run: uv run --with rdkit python assets/make_art.py
 """
 import random
 import re
+import urllib.request
 
 from rdkit import Chem
 from rdkit.Chem import rdDepictor
@@ -177,8 +178,60 @@ def divider():
 '''
 
 
+SKILLICONS = "https://skillicons.dev/icons?i=python,pytorch,sklearn,linux,bash,docker,git&theme=dark&perline=7"
+BADGES = [
+    "Claude-161b22?style=flat-square&logo=claude&logoColor=D97757",
+    "RDKit-161b22?style=flat-square",
+    "ChEMBL-161b22?style=flat-square",
+    "PubChem-161b22?style=flat-square",
+    "PyG-161b22?style=flat-square&logo=pyg&logoColor=4FD1C5",
+    "Hugging_Face-161b22?style=flat-square&logo=huggingface&logoColor=4FD1C5",
+    "PaperQA2-161b22?style=flat-square",
+    "GPT_·_vLLM-161b22?style=flat-square",
+    "Jupyter-161b22?style=flat-square&logo=jupyter&logoColor=4FD1C5",
+]
+
+
+def get(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "profile-art"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read().decode()
+
+
+def toolbox():
+    """Icons and badges vendored into one SVG: one request instead of eleven third-party ones."""
+    icon_pitch = 300 / 256 * 48  # skillicons spacing
+    icons = get(SKILLICONS).strip()
+    icons_w = float(re.search(r'width="([\d.]+)"', icons).group(1))
+    claude = open("assets/claude-tile.svg").read()
+    row1_w = icon_pitch + icons_w
+    badges = []
+    for b in BADGES:
+        svg = get("https://img.shields.io/badge/" + urllib.request.quote(b, safe="?=&-_.")).strip()
+        badges.append((float(re.search(r'width="([\d.]+)"', svg).group(1)), svg))
+    gap = 6
+    row2_w = sum(w for w, _ in badges) + gap * (len(badges) - 1)
+    tw = max(row1_w, row2_w)
+    ids = re.findall(r'id="([^"]+)"', icons + "".join(svg for _, svg in badges))
+    assert len(ids) == len(set(ids)), "nested SVGs share ids"
+
+    def nest(svg, x, y):
+        return re.sub(r"^\s*<svg", f'<svg x="{x:.2f}" y="{y}"', svg, count=1)
+
+    x1 = (tw - row1_w) / 2
+    parts = [nest(claude, x1, 0), nest(icons, x1 + icon_pitch, 0)]
+    x = (tw - row2_w) / 2
+    for w, svg in badges:
+        parts.append(nest(svg, x, 62))
+        x += w + gap
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {tw:.0f} 82" width="{tw:.0f}" height="82" role="img" aria-label="Toolbox: Claude, Python, PyTorch, scikit-learn, Linux, Bash, Docker, Git, RDKit, ChEMBL, PubChem, PyG, Hugging Face, PaperQA2, GPT, vLLM, Jupyter">
+{"".join(parts)}
+</svg>
+'''
+
+
 if __name__ == "__main__":
-    for name, svg in [("hero.svg", hero()), ("divider.svg", divider())]:
+    for name, svg in [("hero.svg", hero()), ("divider.svg", divider()), ("toolbox.svg", toolbox())]:
         with open(f"assets/{name}", "w") as f:
             f.write(svg)
         print("wrote", name)
