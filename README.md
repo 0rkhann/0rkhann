@@ -1,8 +1,14 @@
 <p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
+  <picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg"/>
+  <img src="./assets/hero-dark.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
+</picture>
 </p>
 
-<img src="./assets/divider.svg" width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
+  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+</picture>
 
 ### `$ whoami`
 
@@ -17,13 +23,21 @@ orkhan = {
 }
 ```
 
-
-<img src="./assets/divider.svg" width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
+  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+</picture>
 
 ### `$ pip list --toolbox`
 
 <p align="center">
-  <img src="./assets/toolbox.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, Hugging Face, Bayesian optimisation, LLMs, AI agents, Claude, Git, AWS"/>
+  <picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/toolbox-light.svg"/>
+  <img src="./assets/toolbox-dark.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, Hugging Face, Bayesian optimisation, LLMs, AI agents, Claude, Git, AWS"/>
+</picture>
 </p>
 
-<img src="./assets/divider.svg" width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
+  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+</picture>

@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and AI Engineering. Caffeine generated token by token from its SMILES.">
+  <style>
+    .bond { fill:none; stroke:#0b7285; stroke-width:3; stroke-linecap:round; stroke-dasharray:120; stroke-dashoffset:120; animation:draw 18s ease-out infinite backwards; }
+    .thin { stroke-width:2; stroke-opacity:.7; }
+    .atom, .gen { opacity:0; animation:gen 18s ease-out infinite backwards; }
+    .sym { font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; text-anchor:middle; }
+    .smi { font:500 17px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#1f2328; }
+    .dot { fill:#9fd3cd; animation:drift ease-in-out infinite alternate; }
+    .name { font:700 54px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; fill:#1f2328; }
+    .role { font:500 24px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; fill:#0b7285; letter-spacing:3px; }
+    .meta { font:400 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#59636e; }
+    .tag { font:400 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#1f2328; opacity:0; animation:cycle 12s linear infinite; }
+    .caret { fill:#0b7285; animation:blink 1s steps(1) infinite; }
+    @keyframes gen { 0% { opacity:0; } 2.5%, 74% { opacity:1; } 78%, 100% { opacity:0; } }
+    @keyframes draw { 0% { stroke-dashoffset:120; opacity:1; } 3%, 74% { stroke-dashoffset:0; opacity:1; } 78%, 100% { stroke-dashoffset:0; opacity:0; } }
+    @keyframes drift { from { transform:translate(0,0); opacity:.25; } to { transform:translate(14px,-10px); opacity:.9; } }
+    @keyframes cycle { 0% { opacity:0; } 3%, 30% { opacity:1; } 33%, 100% { opacity:0; } }
+    @keyframes blink { 50% { opacity:0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation:none !important; } .bond { stroke-dashoffset:0; } .atom, .gen, .tag:first-of-type { opacity:1; } }
+  </style>
+  <rect width="1200" height="320" rx="18" fill="#f6f8fa"/>
+  <rect x="1" y="1" width="1198" height="318" rx="17" fill="none" stroke="#d0d7de"/>
+  <g>
+    <circle cx="389" cy="48" r="2.2" class="dot" style="animation-duration:6.4s;animation-delay:-4.9s"/>
+    <circle cx="113" cy="186" r="2.2" class="dot" style="animation-duration:7.7s;animation-delay:-0.5s"/>
+    <circle cx="502" cy="77" r="2.2" class="dot" style="animation-duration:9.4s;animation-delay:-5.0s"/>
+    <circle cx="149" cy="71" r="2.2" class="dot" style="animation-duration:10.7s;animation-delay:-0.4s"/>
+    <circle cx="703" cy="16" r="1.2" class="dot" style="animation-duration:6.4s;animation-delay:-5.2s"/>
+    <circle cx="348" cy="46" r="1.2" class="dot" style="animation-duration:10.6s;animation-delay:-3.4s"/>
+    <circle cx="818" cy="33" r="2.2" class="dot" style="animation-duration:11.1s;animation-delay:-2.2s"/>
+    <circle cx="657" cy="20" r="1.2" class="dot" style="animation-duration:11.0s;animation-delay:-3.0s"/>
+    <circle cx="638" cy="249" r="1.6" class="dot" style="animation-duration:10.7s;animation-delay:-2.7s"/>
+    <circle cx="360" cy="254" r="2.2" class="dot" style="animation-duration:12.2s;animation-delay:-0.5s"/>
+    <circle cx="360" cy="158" r="1.6" class="dot" style="animation-duration:11.8s;animation-delay:-1.7s"/>
+    <circle cx="1176" cy="38" r="1.6" class="dot" style="animation-duration:7.3s;animation-delay:-2.1s"/>
+    <circle cx="1120" cy="135" r="2.2" class="dot" style="animation-duration:6.6s;animation-delay:-3.3s"/>
+    <circle cx="947" cy="262" r="1.6" class="dot" style="animation-duration:11.6s;animation-delay:-3.6s"/>
+    <circle cx="696" cy="146" r="1.2" class="dot" style="animation-duration:13.6s;animation-delay:-2.8s"/>
+    <circle cx="797" cy="19" r="2.2" class="dot" style="animation-duration:8.5s;animation-delay:-3.5s"/>
+    <circle cx="817" cy="143" r="2.2" class="dot" style="animation-duration:9.1s;animation-delay:-4.0s"/>
+    <circle cx="27" cy="148" r="1.2" class="dot" style="animation-duration:10.9s;animation-delay:-3.0s"/>
+    <circle cx="262" cy="92" r="2.2" class="dot" style="animation-duration:8.0s;animation-delay:-2.3s"/>
+    <circle cx="1046" cy="26" r="1.6" class="dot" style="animation-duration:9.2s;animation-delay:-1.7s"/>
+    <circle cx="164" cy="138" r="2.2" class="dot" style="animation-duration:8.2s;animation-delay:-2.5s"/>
+    <circle cx="431" cy="283" r="1.2" class="dot" style="animation-duration:7.2s;animation-delay:-1.1s"/>
+    <circle cx="278" cy="75" r="1.6" class="dot" style="animation-duration:12.6s;animation-delay:-1.1s"/>
+    <circle cx="338" cy="47" r="2.2" class="dot" style="animation-duration:9.0s;animation-delay:-3.4s"/>
+    <circle cx="1144" cy="221" r="2.2" class="dot" style="animation-duration:13.6s;animation-delay:-3.9s"/>
+    <circle cx="888" cy="146" r="2.2" class="dot" style="animation-duration:12.4s;animation-delay:-2.4s"/>
+    <circle cx="479" cy="33" r="2.2" class="dot" style="animation-duration:9.2s;animation-delay:-1.1s"/>
+    <circle cx="1182" cy="141" r="1.2" class="dot" style="animation-duration:8.7s;animation-delay:-0.3s"/>
+    <circle cx="0" cy="48" r="1.2" class="dot" style="animation-duration:13.6s;animation-delay:-3.7s"/>
+    <circle cx="84" cy="67" r="1.6" class="dot" style="animation-duration:7.2s;animation-delay:-1.5s"/>
+    <circle cx="417" cy="117" r="1.2" class="dot" style="animation-duration:6.9s;animation-delay:-2.9s"/>
+    <circle cx="1173" cy="154" r="1.6" class="dot" style="animation-duration:6.7s;animation-delay:-0.6s"/>
+    <circle cx="411" cy="85" r="2.2" class="dot" style="animation-duration:7.3s;animation-delay:-0.1s"/>
+    <circle cx="1141" cy="169" r="1.2" class="dot" style="animation-duration:11.5s;animation-delay:-5.5s"/>
+    <circle cx="910" cy="95" r="2.2" class="dot" style="animation-duration:12.9s;animation-delay:-4.2s"/>
+    <circle cx="313" cy="117" r="1.2" class="dot" style="animation-duration:8.8s;animation-delay:-1.3s"/>
+    <circle cx="650" cy="161" r="2.2" class="dot" style="animation-duration:7.8s;animation-delay:-4.9s"/>
+    <circle cx="1182" cy="273" r="1.2" class="dot" style="animation-duration:12.5s;animation-delay:-4.4s"/>
+    <circle cx="272" cy="166" r="1.6" class="dot" style="animation-duration:11.8s;animation-delay:-5.9s"/>
+    <circle cx="948" cy="151" r="1.2" class="dot" style="animation-duration:11.5s;animation-delay:-5.7s"/>
+    <circle cx="537" cy="300" r="1.6" class="dot" style="animation-duration:13.6s;animation-delay:-2.2s"/>
+    <circle cx="265" cy="73" r="1.2" class="dot" style="animation-duration:8.7s;animation-delay:-2.9s"/>
+    <circle cx="1182" cy="195" r="1.2" class="dot" style="animation-duration:9.8s;animation-delay:-3.9s"/>
+    <circle cx="960" cy="27" r="2.2" class="dot" style="animation-duration:7.0s;animation-delay:-2.3s"/>
+    <circle cx="854" cy="64" r="1.2" class="dot" style="animation-duration:9.5s;animation-delay:-3.8s"/>
+    <circle cx="104" cy="303" r="2.2" class="dot" style="animation-duration:9.2s;animation-delay:-2.4s"/>
+    <circle cx="1136" cy="232" r="1.2" class="dot" style="animation-duration:13.9s;animation-delay:-0.2s"/>
+    <circle cx="709" cy="149" r="2.2" class="dot" style="animation-duration:7.2s;animation-delay:-5.0s"/>
+    <circle cx="1176" cy="210" r="1.6" class="dot" style="animation-duration:7.2s;animation-delay:-3.3s"/>
+    <circle cx="26" cy="256" r="2.2" class="dot" style="animation-duration:11.2s;animation-delay:-3.2s"/>
+    <circle cx="1120" cy="139" r="1.2" class="dot" style="animation-duration:12.6s;animation-delay:-1.3s"/>
+    <circle cx="302" cy="94" r="1.2" class="dot" style="animation-duration:12.1s;animation-delay:-2.0s"/>
+    <circle cx="653" cy="267" r="1.2" class="dot" style="animation-duration:13.3s;animation-delay:-2.1s"/>
+    <circle cx="550" cy="187" r="2.2" class="dot" style="animation-duration:9.4s;animation-delay:-5.5s"/>
+    <circle cx="602" cy="170" r="2.2" class="dot" style="animation-duration:10.1s;animation-delay:-5.2s"/>
+    <circle cx="932" cy="195" r="1.2" class="dot" style="animation-duration:7.4s;animation-delay:-2.8s"/>
+    <circle cx="870" cy="178" r="1.6" class="dot" style="animation-duration:11.5s;animation-delay:-3.2s"/>
+    <circle cx="579" cy="248" r="2.2" class="dot" style="animation-duration:6.5s;animation-delay:-1.1s"/>
+    <circle cx="51" cy="31" r="1.6" class="dot" style="animation-duration:10.5s;animation-delay:-4.6s"/>
+    <circle cx="1095" cy="142" r="2.2" class="dot" style="animation-duration:13.8s;animation-delay:-3.6s"/>
+    <circle cx="239" cy="89" r="2.2" class="dot" style="animation-duration:10.3s;animation-delay:-2.9s"/>
+    <circle cx="1130" cy="224" r="1.6" class="dot" style="animation-duration:13.4s;animation-delay:-5.4s"/>
+    <circle cx="243" cy="143" r="1.6" class="dot" style="animation-duration:7.0s;animation-delay:-2.7s"/>
+    <circle cx="87" cy="77" r="1.2" class="dot" style="animation-duration:7.7s;animation-delay:-1.8s"/>
+    <circle cx="147" cy="249" r="2.2" class="dot" style="animation-duration:11.1s;animation-delay:-2.2s"/>
+    <circle cx="304" cy="44" r="1.6" class="dot" style="animation-duration:7.8s;animation-delay:-5.7s"/>
+    <circle cx="478" cy="156" r="2.2" class="dot" style="animation-duration:12.7s;animation-delay:-1.0s"/>
+    <circle cx="518" cy="165" r="1.6" class="dot" style="animation-duration:9.4s;animation-delay:-2.1s"/>
+    <circle cx="111" cy="117" r="1.6" class="dot" style="animation-duration:10.4s;animation-delay:-2.6s"/>
+    <circle cx="22" cy="106" r="2.2" class="dot" style="animation-duration:8.4s;animation-delay:-5.8s"/>
+  </g>
+  <g>
+    <text x="143.2" y="292" class="smi" style="fill:#0b7285" text-anchor="end">▸</text>
+    <text x="157.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:0.00s">C</text>
+    <text x="167.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:0.22s">N</text>
+    <text x="177.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:0.44s">1</text>
+    <text x="187.8" y="292" class="smi gen" textLength="10.2" style="animation-delay:0.66s">C</text>
+    <text x="198.0" y="292" class="smi gen" textLength="10.2" style="animation-delay:0.88s">=</text>
+    <text x="208.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:1.10s">N</text>
+    <text x="218.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:1.32s">C</text>
+    <text x="228.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:1.54s">2</text>
+    <text x="238.8" y="292" class="smi gen" textLength="10.2" style="animation-delay:1.76s">=</text>
+    <text x="249.0" y="292" class="smi gen" textLength="10.2" style="animation-delay:1.98s">C</text>
+    <text x="259.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:2.20s">1</text>
+    <text x="269.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:2.42s">C</text>
+    <text x="279.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:2.64s">(</text>
+    <text x="289.8" y="292" class="smi gen" textLength="10.2" style="animation-delay:2.86s">=</text>
+    <text x="300.0" y="292" class="smi gen" textLength="10.2" style="animation-delay:3.08s">O</text>
+    <text x="310.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:3.30s">)</text>
+    <text x="320.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:3.52s">N</text>
+    <text x="330.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:3.74s">(</text>
+    <text x="340.8" y="292" class="smi gen" textLength="10.2" style="animation-delay:3.96s">C</text>
+    <text x="351.0" y="292" class="smi gen" textLength="10.2" style="animation-delay:4.18s">(</text>
+    <text x="361.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:4.40s">=</text>
+    <text x="371.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:4.62s">O</text>
+    <text x="381.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:4.84s">)</text>
+    <text x="391.8" y="292" class="smi gen" textLength="10.2" style="animation-delay:5.06s">N</text>
+    <text x="402.0" y="292" class="smi gen" textLength="10.2" style="animation-delay:5.28s">2</text>
+    <text x="412.2" y="292" class="smi gen" textLength="10.2" style="animation-delay:5.50s">C</text>
+    <text x="422.4" y="292" class="smi gen" textLength="10.2" style="animation-delay:5.72s">)</text>
+    <text x="432.6" y="292" class="smi gen" textLength="10.2" style="animation-delay:5.94s">C</text>
+    <path class="bond" d="M209.5,241.1 L221.3,186.4" style="animation-delay:0.27s"/>
+    <path class="bond" d="M221.3,186.4 L184.0,144.7" style="animation-delay:0.71s"/>
+    <path class="bond" d="M184.0,144.7 L212.2,96.3" style="animation-delay:1.15s"/>
+    <path class="bond thin" d="M195.2,141.4 L214.9,107.6" style="animation-delay:1.23s"/>
+    <path class="bond" d="M212.2,96.3 L266.9,108.1" style="animation-delay:1.37s"/>
+    <path class="bond" d="M266.9,108.1 L272.6,163.8" style="animation-delay:2.03s"/>
+    <path class="bond thin" d="M259.8,117.3 L263.8,156.3" style="animation-delay:2.11s"/>
+    <path class="bond" d="M272.6,163.8 L323.6,186.8" style="animation-delay:2.47s"/>
+    <path class="bond" d="M323.6,186.8 L329.3,242.5" style="animation-delay:3.13s"/>
+    <path class="bond thin" d="M316.5,196.0 L320.5,235.0" style="animation-delay:3.21s"/>
+    <path class="bond" d="M323.6,186.8 L369.1,154.1" style="animation-delay:3.57s"/>
+    <path class="bond" d="M369.1,154.1 L363.4,98.4" style="animation-delay:4.01s"/>
+    <path class="bond" d="M363.4,98.4 L408.9,65.6" style="animation-delay:4.67s"/>
+    <path class="bond thin" d="M365.6,87.0 L397.4,64.1" style="animation-delay:4.75s"/>
+    <path class="bond" d="M363.4,98.4 L312.4,75.4" style="animation-delay:5.11s"/>
+    <path class="bond" d="M312.4,75.4 L306.7,19.7" style="animation-delay:5.55s"/>
+    <path class="bond" d="M369.1,154.1 L420.1,177.1" style="animation-delay:5.99s"/>
+    <path class="bond" d="M272.6,163.8 L221.3,186.4" style="animation-delay:2.03s"/>
+    <path class="bond" d="M312.4,75.4 L266.9,108.1" style="animation-delay:5.11s"/>
+    <circle class="atom" cx="209.5" cy="241.1" r="4.5" fill="#0b7285" style="animation-delay:0.00s"/>
+    <g class="atom" style="animation-delay:0.22s"><circle cx="221.3" cy="186.4" r="15" fill="#ffffff" stroke="#3b5bdb" stroke-width="2"/><text x="221.3" y="191.9" fill="#3b5bdb" class="sym">N</text></g>
+    <circle class="atom" cx="184.0" cy="144.7" r="4.5" fill="#0b7285" style="animation-delay:0.66s"/>
+    <g class="atom" style="animation-delay:1.10s"><circle cx="212.2" cy="96.3" r="15" fill="#ffffff" stroke="#3b5bdb" stroke-width="2"/><text x="212.2" y="101.8" fill="#3b5bdb" class="sym">N</text></g>
+    <circle class="atom" cx="266.9" cy="108.1" r="4.5" fill="#0b7285" style="animation-delay:1.32s"/>
+    <circle class="atom" cx="272.6" cy="163.8" r="4.5" fill="#0b7285" style="animation-delay:1.98s"/>
+    <circle class="atom" cx="323.6" cy="186.8" r="4.5" fill="#0b7285" style="animation-delay:2.42s"/>
+    <g class="atom" style="animation-delay:3.08s"><circle cx="329.3" cy="242.5" r="15" fill="#ffffff" stroke="#d6336c" stroke-width="2"/><text x="329.3" y="248.0" fill="#d6336c" class="sym">O</text></g>
+    <g class="atom" style="animation-delay:3.52s"><circle cx="369.1" cy="154.1" r="15" fill="#ffffff" stroke="#3b5bdb" stroke-width="2"/><text x="369.1" y="159.6" fill="#3b5bdb" class="sym">N</text></g>
+    <circle class="atom" cx="363.4" cy="98.4" r="4.5" fill="#0b7285" style="animation-delay:3.96s"/>
+    <g class="atom" style="animation-delay:4.62s"><circle cx="408.9" cy="65.6" r="15" fill="#ffffff" stroke="#d6336c" stroke-width="2"/><text x="408.9" y="71.1" fill="#d6336c" class="sym">O</text></g>
+    <g class="atom" style="animation-delay:5.06s"><circle cx="312.4" cy="75.4" r="15" fill="#ffffff" stroke="#3b5bdb" stroke-width="2"/><text x="312.4" y="80.9" fill="#3b5bdb" class="sym">N</text></g>
+    <circle class="atom" cx="306.7" cy="19.7" r="4.5" fill="#0b7285" style="animation-delay:5.50s"/>
+    <circle class="atom" cx="420.1" cy="177.1" r="4.5" fill="#0b7285" style="animation-delay:5.94s"/>
+  </g>
+  <text x="560" y="118" class="name">Orkhan Abdullayev</text>
+  <text x="562" y="158" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
+  <text x="562" y="190" class="meta">Strasbourg, FR  ·  SMILES in, insight out</text>
+  <g>
+    <text x="560" y="232" class="tag" style="animation-delay:0s">&gt; Teaching machines to read molecules<tspan class="caret">_</tspan></text>
+    <text x="560" y="232" class="tag" style="animation-delay:4s">&gt; LLM agents for chemistry<tspan class="caret">_</tspan></text>
+    <text x="560" y="232" class="tag" style="animation-delay:8s">&gt; De novo design: molecules that don't exist yet<tspan class="caret">_</tspan></text>
+  </g>
+</svg>

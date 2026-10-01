@@ -9,8 +9,18 @@ from xml.sax.saxutils import escape
 from rdkit import Chem
 from rdkit.Chem import rdDepictor
 
-BG, PANEL, TEAL, DIM, TEXT, MUTED, EDGE = "#0d1117", "#111a24", "#4FD1C5", "#1f6f6a", "#e6edf3", "#8b949e", "#21262d"
-ATOM_COLOR = {"N": "#7aa2ff", "O": "#ff7b72", "S": "#e3b341"}
+# one palette per GitHub theme; build() swaps them into these module names before drawing
+THEMES = {
+    "dark": dict(BG="#0d1117", PANEL="#111a24", TEAL="#4FD1C5", DIM="#1f6f6a", TEXT="#e6edf3", MUTED="#8b949e",
+                 EDGE="#21262d", TILE="#0d1117", NAME="#c9d1d9",
+                 ATOM_COLOR={"N": "#7aa2ff", "O": "#ff7b72", "S": "#e3b341"},
+                 FAM={"ml": "#7aa2ff", "chem": "#4FD1C5", "ai": "#ff9e64", "infra": "#e3b341"}),
+    "light": dict(BG="#f6f8fa", PANEL="#ffffff", TEAL="#0b7285", DIM="#9fd3cd", TEXT="#1f2328", MUTED="#59636e",
+                  EDGE="#d0d7de", TILE="#ffffff", NAME="#1f2328",
+                  ATOM_COLOR={"N": "#3b5bdb", "O": "#d6336c", "S": "#9c6f00"},
+                  FAM={"ml": "#3b5bdb", "chem": "#0b7285", "ai": "#d9480f", "infra": "#9c6f00"}),
+}
+globals().update(THEMES["dark"])
 SMILES = "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"  # caffeine
 W, H = 1200, 320
 SANS = '-apple-system,"Segoe UI",Helvetica,Arial,sans-serif'
@@ -167,7 +177,7 @@ def divider():
     path = "M" + " L".join(pts)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} 40" width="{W}" height="40" role="img" aria-label="divider">
   <style>
-    .base {{ fill:none; stroke:#8b949e; stroke-opacity:.3; stroke-width:1.5; }}
+    .base {{ fill:none; stroke:{MUTED}; stroke-opacity:.3; stroke-width:1.5; }}
     .pulse {{ fill:none; stroke:{TEAL}; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:90 2400; animation:run 6s linear infinite; }}
     @keyframes run {{ from {{ stroke-dashoffset:90; }} to {{ stroke-dashoffset:-2400; }} }}
     @media (prefers-reduced-motion: reduce) {{ .pulse {{ animation:none; }} }}
@@ -179,12 +189,7 @@ def divider():
 
 
 # periodic-table toolbox: families set the tile colour
-FAMILIES = {
-    "ml": ("Machine & deep learning", "#7aa2ff"),
-    "chem": ("Chemistry", TEAL),
-    "ai": ("AI & agents", "#ff9e64"),
-    "infra": ("Infrastructure", "#e3b341"),
-}
+FAMILIES = {"ml": "Machine & deep learning", "chem": "Chemistry", "ai": "AI & agents", "infra": "Infrastructure"}
 # (row, column, symbol, name, family) on a 7-column grid shaped like the periodic table:
 # two corner tiles on top, two-and-two in the middle, a full bottom row
 ELEMENTS = [
@@ -215,11 +220,11 @@ def toolbox():
     out = []
     # atomic numbers run row by row, like the real table
     for z, (r, c, sym, name, fam) in enumerate(sorted(ELEMENTS), start=1):
-        color = FAMILIES[fam][1]
+        color = FAM[fam]
         x, y = c * (tw + gap), r * (th + gap)
         out.append(
             f'<g class="el" style="animation-delay:{(z - 1) * .05:.2f}s">'
-            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{BG}"/>'  # opaque base: legible on light pages too
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{TILE}"/>'  # opaque base under the tint
             f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{color}" fill-opacity=".1" stroke="{color}" stroke-opacity=".55" stroke-width="1.5"/>'
             f'<text x="{x + 12}" y="{y + 22}" class="z">{z}</text>'
             f'<text x="{x + tw / 2:.0f}" y="{y + 74}" class="sym" fill="{color}">{sym}</text>'
@@ -227,7 +232,8 @@ def toolbox():
         )
     ly = nrow * (th + gap) + 18
     legend, lx = [], 0.0
-    for fam, color in FAMILIES.values():
+    for key, fam in FAMILIES.items():
+        color = FAM[key]
         legend.append(f'<rect x="{lx:.0f}" y="{ly - 11}" width="12" height="12" rx="3" fill="{color}" fill-opacity=".35" stroke="{color}"/>'
                       f'<text x="{lx + 20:.0f}" y="{ly}" class="lg">{escape(fam)}</text>')
         lx += 20 + 9.8 * len(fam) + 30
@@ -238,7 +244,7 @@ def toolbox():
   <style>
     .z {{ font:500 14px {MONO}; fill:{MUTED}; }}
     .sym {{ font:700 46px {SANS}; text-anchor:middle; }}
-    .nm {{ font:500 16px {SANS}; fill:#c9d1d9; text-anchor:middle; }}
+    .nm {{ font:500 16px {SANS}; fill:{NAME}; text-anchor:middle; }}
     .lg {{ font:400 16px {MONO}; fill:{MUTED}; }}
     .el {{ opacity:0; animation:in .5s ease-out forwards; }}
     @keyframes in {{ from {{ opacity:0; transform:translateY(6px); }} to {{ opacity:1; transform:none; }} }}
@@ -251,8 +257,9 @@ def toolbox():
 
 
 if __name__ == "__main__":
-    files = [("hero.svg", hero()), ("divider.svg", divider()), ("toolbox.svg", toolbox())]
-    for name, svg in files:
-        with open(f"assets/{name}", "w") as f:
-            f.write(svg)
-        print("wrote", name)
+    for theme, palette in THEMES.items():
+        globals().update(palette)
+        for name, svg in [("hero", hero()), ("divider", divider()), ("toolbox", toolbox())]:
+            with open(f"assets/{name}-{theme}.svg", "w") as f:
+                f.write(svg)
+            print(f"wrote {name}-{theme}.svg")
