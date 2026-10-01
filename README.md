@@ -1,5 +1,7 @@
 <p align="center">
   <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-mobile-light.0689d1d1.svg"/>
+  <source media="(max-width: 600px)" srcset="./assets/hero-mobile-dark.cab7696a.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.d369d1e2.svg"/>
   <img src="./assets/hero-dark.11aaf0d8.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
 </picture>
