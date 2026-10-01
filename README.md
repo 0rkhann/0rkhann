@@ -1,13 +1,13 @@
 <p align="center">
   <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg"/>
-  <img src="./assets/hero-dark.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/hero-light.svg"/>
+  <img src="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/hero-dark.svg" width="100%" alt="Orkhan Abdullayev · Chemoinformatics · AI Engineering"/>
 </picture>
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
-  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-light.svg"/>
+  <img src="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-dark.svg" width="100%" alt=""/>
 </picture>
 
 ### `$ whoami`
@@ -24,20 +24,20 @@ orkhan = {
 ```
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
-  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-light.svg"/>
+  <img src="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-dark.svg" width="100%" alt=""/>
 </picture>
 
 ### `$ pip list --toolbox`
 
 <p align="center">
   <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/toolbox-light.svg"/>
-  <img src="./assets/toolbox-dark.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, Hugging Face, Bayesian optimisation, LLMs, AI agents, Claude, Git, AWS"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/toolbox-light.svg"/>
+  <img src="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/toolbox-dark.svg" alt="Toolbox as a periodic table, each tile a tool: Python, RDKit, PyTorch, scikit-learn, Linux, Docker, Hugging Face, Bayesian optimisation, LLMs, AI agents, Claude, Git, AWS"/>
 </picture>
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/divider-light.svg"/>
-  <img src="./assets/divider-dark.svg" width="100%" alt=""/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-light.svg"/>
+  <img src="https://raw.githubusercontent.com/0rkhann/0rkhann/main/assets/divider-dark.svg" width="100%" alt=""/>
 </picture>

@@ -190,7 +190,7 @@ def hero():
   </g>
   <text x="560" y="118" class="name">Orkhan Abdullayev</text>
   <text x="562" y="158" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
-  <text x="562" y="190" class="meta">Strasbourg, FR  ·  where molecules meet models</text>
+  <text x="562" y="190" class="meta">Strasbourg, FR  ·  PhD @ Chemoinformatics Lab</text>
   <g>
     {tl}
   </g>
