@@ -170,7 +170,7 @@ def hero(g=DESKTOP):
     taglines = ["Teaching machines to read molecules", "LLM agents for chemistry", "De novo design: molecules that don't exist yet"]
     tl, tl_css = typed_taglines(taglines, x, tag_y, cw=tag_cw)
     # each element shares one looping keyframe; its delay sets when it is "generated"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and AI Engineering. Caffeine generated token by token from its SMILES.">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Orkhan Abdullayev, Chemoinformatics and ML Engineering. Caffeine generated token by token from its SMILES.">
   <style>
     .bond {{ fill:none; stroke:{TEAL}; stroke-width:3; stroke-linecap:round; stroke-dasharray:120; stroke-dashoffset:120; animation:draw {PERIOD}s ease-out infinite backwards; }}
     .thin {{ stroke-width:2; stroke-opacity:.7; }}
@@ -201,7 +201,7 @@ def hero(g=DESKTOP):
     {de_novo(*g["mol"], cw=g["smi"][1])}
   </g>
   <text x="{x}" y="{g["name"][0]}" class="name">Orkhan Abdullayev</text>
-  <text x="{x + 2}" y="{g["role"][0]}" class="role">CHEMOINFORMATICS · AI ENGINEERING</text>
+  <text x="{x + 2}" y="{g["role"][0]}" class="role">CHEMOINFORMATICS · ML ENGINEERING</text>
   <text x="{x + 2}" y="{g["meta"][0]}" class="meta">Strasbourg, FR  ·  PhD @ Lab de Chémoinformatique</text>
   <g>
     {tl}
